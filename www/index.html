@@ -43,7 +43,7 @@
 
 <!--Login page-->
 <div data-role="page" id="loginpage">
-    <div data-role="header" style="background-color: #4CAF50">
+    <div data-role="header" style="background-color: #8A5241">
         <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
         <a href="index.html" class="ui-btn ui-btn-icon-right" data-transition="flip">
             <!--<i class=""></i>-->
@@ -59,41 +59,11 @@
     </div>
 
     <div data-role="content">
-        <!---->
-        <div class="align-center">
-            <img id="images" src="" style="max-width: 100%">
-        </div>
-        <!---->
-        <div class="row">
-            <div class="col-xs-6 align-left">
-                <a data-role="button" onclick="prev()"
-                   class="ui-btn ui-btn-inline align-left"><i
-                        class="zmdi zmdi-chevron-left zmd-2x">
-                    <!---->
-                </i>
-                </a>
-            </div>
-            <!---->
-            <div class="col-xs-6 align-right">
-                <a data-role="button" onclick="next()"
-                   class="ui-btn ui-btn-inline align-left"><i
-                        class="zmdi zmdi-chevron-right zmd-2x">
-                    <!---->
-                </i>
-                </a>
-            </div>
-            <!--<div class="col-xs-6">-->
-            <!--<a data-role="button"-->
-            <!--class="ui-btn ui-btn-inline ui-btn-fab waves-effect waves-button waves-effect waves-button"><i-->
-            <!--class="zmdi zmdi-long-arrow-left zmd-flip-horizontal"></i></a>-->
-            <!--</div>-->
-        </div>
-        <!---->
+
         <div data-role="content">
-            <!--<br>-->
-            <!--<br>-->
+
             <div class="align-center">
-                <img src="img/genesys.png">
+                <img src="img/logo.png" height="200">
                 <!--<hr>-->
             </div>
 
@@ -116,159 +86,20 @@
             <br>
             <!---->
             <div>
-                <a data-role="button" id="loginbutton" style="background-color: #4CAF50;color: #fff" onclick="login()">Login</a>
+                <a data-role="button" id="loginbutton" style="background-color: #8A5241;color: #fff">Login</a>
             </div>
             <!---->
-            <!--<div class="align-center">-->
-            <!--<h5>Sign up <a href="#signuppage" data-transition="slide" style="color: #4CAF50">here !</a></h5>-->
-            <!--</div>-->
-        </div>
-    </div>
-</div>
-
-<!--dashboard-->
-<div data-role="page" id="dashboard">
-
-    <div class="row">
-        <div id="firstrow" class="col-xs-12 col-sm-12" style="" onclick="">
+            <br>
             <div class="align-center">
-                <img id="fi" src="./img/odb.png" class="img-responsive">
+                <h5>Sign up <a href="#createaccountpage" data-transition="slide" style="color: #8A5241">here !</a></h5>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="secondrow" class="col-xs-12" onclick="">
-            <div class="align-center">
-                <img src="img/bible.png" class="img-responsive">
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="thirdrow" class="col-xs-12" style="" onclick="">
-            <div class="align-center">
-                <img src="img/bstories.jpg" class="img-responsive">
-            </div>
-        </div>
-    </div>
-
-    <!--Social Media-->
-    <div class="row">
-
-        <div class="col-xs-4">
-            <div class="align-center">
-                <br>
-                <br>
-                <!--<p/></p>-->
-                <a data-role="button" class="ui-btn"><i id="instagram" class="zmdi zmdi-instagram icons"></i></a>
-            </div>
-        </div>
-
-        <div class="col-xs-4">
-            <div class="align-center">
-                <br>
-                <br>
-                <a data-role="button" class="ui-btn"><i id="facebook" class="zmdi zmdi-facebook icons"></i></a>
-                <!--<p style="color: #fff">SERMONS</p>-->
-            </div>
-        </div>
-
-        <div class="col-xs-4">
-            <div class="align-center">
-                <br>
-                <br>
-                <a href="#" class="ui-btn"><i id="youtube" class="zmdi zmdi-youtube icons"></i></a>
-                <!--<p style="color: #fff">SERMONS</p>-->
-            </div>
-        </div>
-    </div>
-
-    <!--footer-->
-    <div data-role="footer" data-position="fixed" id="footer">
-        <div class="row">
-            <div class="col-xs-6"></div>
-            <div class="col-xs-6">
-                <div class="align-right">
-                    <a href="#bottomsheetlist" data-role="button"
-                       class="ui-btn">
-                        <i id="fmenu" style="color: #4CAF50;" class="zmdi zmdi-menu zmd-2x"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--bottom panel-->
-    <div data-role="panel" id="bottomsheetlist" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="true"
-         data-transition="pop"
-         data-position='bottom' data-display="overlay">
-
-        <div class="row">
-            <div class="col-xs-4" onclick="get_profile_data()">
-                <div class="align-center">
-                    <br>
-                    <br>
-                    <i style="color: #4CAF50" class="zmdi zmdi-account ficons"></i>
-                    <p class="btext">PROFILE</p>
-                </div>
-            </div>
-
-            <div class="col-xs-4" onclick="toann()">
-                <div class="align-center">
-                    <br>
-                    <br>
-                    <i style="" class="zmdi zmdi-comment-outline ficons"></i>
-                    <p class="btext">ANNOUNCEMENTS</p>
-                </div>
-            </div>
-
-            <div class="col-xs-4" onclick="view_appointments()">
-                <div class="align-center">
-                    <br>
-                    <br>
-                    <i class="zmdi zmdi-receipt ficons"></i>
-                    <p class="btext">APPOINTMENTS</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-xs-4" onclick="view_activities()">
-                <div class="align-center">
-                    <br>
-                    <br>
-                    <i class="zmdi zmdi-calendar-note ficons"></i>
-                    <p class="btext" style="">ACTIVITIES</p>
-                </div>
-            </div>
-
-            <div class="col-xs-4" onclick="view_messages()">
-                <div class="align-center">
-                    <br>
-                    <br>
-                    <i class="zmdi zmdi-collection-bookmark ficons"></i>
-                    <p class="btext">SERMONS</p>
-                </div>
-            </div>
-
-            <div class="col-xs-4" onclick="get_books()">
-                <div class="align-center">
-                    <br>
-                    <br>
-                    <i class="zmdi zmdi-book ficons"></i>
-                    <p class="btext">BIBLE</p>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>
 
 <!--Signup page-->
-<div data-role="page" id="signuppage">
-    <div data-role="header" style="background-color: #4CAF50">
+<div data-role="page" id="createaccountpage">
+    <div data-role="header" style="background-color: #8A5241">
         <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
         <a href="index.html" class="ui-btn ui-btn-icon-right" data-transition="flip">
 
@@ -304,27 +135,155 @@
     </div>
 
     <div data-role="content">
+
         <div class="align-center">
-            <h4><b>Sign up here !</b></h4>
+            <label for="title">Title</label>
         </div>
+
+        <select name="title" id="title">
+            <option value="1">MR</option>
+            <option value="2">MISS</option>
+            <option value="3">MRS</option>
+            <option value="4">DR</option>
+            <option value="5">REV</option>
+            <option value="6">OTHER</option>
+        </select>
         <br>
 
         <!--name-->
+        <label style="font-size: 14px">Surname</label>
         <div>
-            <input type="text" id="susername" placeholder="Username" required style="text-align: center">
+            <input type="text" id="sname" style="text-align: center">
         </div>
 
+        <label style="font-size: 14px">First Name</label>
         <div>
-            <input type="number" id="stel" placeholder="Telephone" style="text-align: center" maxlength="10">
+            <input type="text" id="fname" style="text-align: center">
         </div>
 
+        <label style="font-size: 14px">Other Names</label>
         <div>
-            <input type="password" id="spassword" placeholder="Password" required style="text-align: center">
+            <input type="text" id="oname" required style="text-align: center">
         </div>
 
+        <label style="font-size: 14px">Name of Spouse</label>
         <div>
-            <input type="password" id="scpassword" placeholder="Confirm Password" required
-                   style="text-align: center">
+            <input type="text" id="spousename" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Number of Children</label>
+        <div>
+            <input type="number" id="numchilren" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Residential Address</label>
+        <div>
+            <input type="text" id="raddress" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Mobile)</label>
+        <div>
+            <input type="text" id="mtel" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Office)</label>
+        <div>
+            <input type="text" id="otel" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Home)</label>
+        <div>
+            <input type="text" id="htel" style="text-align: center">
+        </div>
+        <hr>
+        <!---->
+        <label style="font-size: 14px">Date of Birth</label>
+        <div>
+            <input type="date" id="dob" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Email</label>
+        <div>
+            <input type="email" id="email" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Occupation</label>
+        <div>
+            <input type="text" id="occup" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Nationality</label>
+        <div>
+            <input type="text" id="nation" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Name of Employer</label>
+        <div>
+            <input type="text" id="ename" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Employer Address</label>
+        <div>
+            <input type="text" id="eaddress" style="text-align: center">
+        </div>
+        <hr>
+
+        <div class="align-center">
+            <label for="title">Marital Status</label>
+        </div>
+        <select name="title" id="mstatus">
+            <option value="1">MARRIED</option>
+            <option value="2">DIVORCED</option>
+            <option value="3">SINGLE</option>
+            <option value="4">OTHER</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Source of Funds</label>
+        </div>
+        <select name="source of Funds" id="funds">
+            <option value="1">SALARY</option>
+            <option value="2">TRADING</option>
+            <option value="3">INVESTMENT</option>
+            <option value="4">OTHER</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Monthly Income (GHS)</label>
+        </div>
+        <select name="Monthly Income" id="mincome">
+            <option value="1">1---1000</option>
+            <option value="2">1001-2000</option>
+            <option value="3">2001-5000</option>
+            <option value="3">5001 Plus</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Identification</label>
+        </div>
+        <select name="Monthly Income" id="id">
+            <option value="1">PASSPORT</option>
+            <option value="2">VOTER</option>
+            <option value="3">DRIVER'S LICENSE</option>
+            <option value="3">OTHER</option>
+        </select>
+
+        <label style="font-size: 14px">ID Number</label>
+        <div>
+            <input type="text" id="idnum" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Date of Issue</label>
+        <div>
+            <input type="date" id="doi" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Expiry Date</label>
+        <div>
+            <input type="text" id="edate" style="text-align: center">
         </div>
 
         <br>
