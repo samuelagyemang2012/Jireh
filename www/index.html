@@ -84,7 +84,7 @@
         <br>
         <!---->
         <div>
-            <a data-role="button" id="loginbutton" style="background-color: #8A5241;color: #fff">Login</a>
+            <a data-role="button" data-transition="slide" href="#myloanpage" id="loginbutton" style="background-color: #8A5241;color: #fff">Login</a>
         </div>
         <!---->
         <br>
@@ -101,7 +101,7 @@
         <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
 
         <a href="#loginpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
-            <i class="zmdi zmdi zmdi-arrow-back"></i>
+            <i class="zmdi zmdi zmdi-home"></i>
         </a>
 
         <ul data-role="tab" data-swipe="true" class="nd2Tabs">
@@ -112,7 +112,7 @@
 
             <li data-tab="add" class="nav-item waves-effect waves-button waves-light">
                 <a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"
-                   href="#editpage">ACCOUNT</a>
+                   href="#editpage">MY ACCOUNT</a>
             </li>
         </ul>
     </div>
@@ -128,7 +128,7 @@
 
             <div class="col-xs-6">
                 <div class="align-right">
-                    <a href="#editpage" data-role="button" class="ui-btn" style="background-color: #8A5241">
+                    <a href="#loanpage" data-role="button" class="ui-btn" style="background-color: #8A5241">
                         <i class="zmdi zmdi-plus zmdi-hc-2x" style="color: #fff"></i>
                     </a>
                 </div>
@@ -143,7 +143,7 @@
     <div data-role="header" style="background-color: #8A5241">
         <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
 
-        <a href="#loginpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
+        <a href="#myloanpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
             <i class="zmdi zmdi zmdi-arrow-back"></i>
         </a>
 
@@ -155,15 +155,168 @@
 
             <li data-tab="add" class="nav-item waves-effect waves-button waves-light">
                 <a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"
-                   href="#editpage">ACCOUNT</a>
+                   href="#editpage">MY ACCOUNT</a>
             </li>
         </ul>
     </div>
 
     <div data-role="content">
+        <div class="align-center">
+            <label for="title">Title</label>
+        </div>
 
+        <select name="title" id="etitle">
+            <option value="1">MR</option>
+            <option value="2">MISS</option>
+            <option value="3">MRS</option>
+            <option value="4">DR</option>
+            <option value="5">REV</option>
+            <option value="6">OTHER</option>
+        </select>
+        <br>
+
+        <!--name-->
+        <label style="font-size: 14px">Surname</label>
+        <div>
+            <input type="text" id="esname" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">First Name</label>
+        <div>
+            <input type="text" id="efname" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Other Names</label>
+        <div>
+            <input type="text" id="eoname" required style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Name of Spouse</label>
+        <div>
+            <input type="text" id="espousename" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Number of Children</label>
+        <div>
+            <input type="number" id="enumchilren" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Residential Address</label>
+        <div>
+            <input type="text" id="eraddress" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Mobile)</label>
+        <div>
+            <input type="text" id="emtel" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Office)</label>
+        <div>
+            <input type="text" id="eotel" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Home)</label>
+        <div>
+            <input type="text" id="ehtel" style="text-align: center">
+        </div>
+        <hr>
+        <!---->
+        <label style="font-size: 14px">Date of Birth</label>
+        <div>
+            <input type="date" id="edob" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Email</label>
+        <div>
+            <input type="email" id="eemail" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Occupation</label>
+        <div>
+            <input type="text" id="eoccup" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Nationality</label>
+        <div>
+            <input type="text" id="enation" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Name of Employer</label>
+        <div>
+            <input type="text" id="eename" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Employer Address</label>
+        <div>
+            <input type="text" id="eeaddress" style="text-align: center">
+        </div>
+        <hr>
+
+        <div class="align-center">
+            <label for="title">Marital Status</label>
+        </div>
+        <select name="title" id="emstatus">
+            <option value="1">MARRIED</option>
+            <option value="2">DIVORCED</option>
+            <option value="3">SINGLE</option>
+            <option value="4">OTHER</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Source of Funds</label>
+        </div>
+        <select name="source of Funds" id="efunds">
+            <option value="1">SALARY</option>
+            <option value="2">TRADING</option>
+            <option value="3">INVESTMENT</option>
+            <option value="4">OTHER</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Monthly Income (GHS)</label>
+        </div>
+        <select name="Monthly Income" id="emincome">
+            <option value="1">1---1000</option>
+            <option value="2">1001-2000</option>
+            <option value="3">2001-5000</option>
+            <option value="3">5001 Plus</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Identification</label>
+        </div>
+        <select name="Monthly Income" id="eid">
+            <option value="1">PASSPORT</option>
+            <option value="2">VOTER</option>
+            <option value="3">DRIVER'S LICENSE</option>
+            <option value="3">OTHER</option>
+        </select>
+
+        <label style="font-size: 14px">ID Number</label>
+        <div>
+            <input type="text" id="eidnum" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Date of Issue</label>
+        <div>
+            <input type="date" id="edoi" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Expiry Date</label>
+        <div>
+            <input type="text" id="eedate" style="text-align: center">
+        </div>
+        <br>
+        <br>
+        <div>
+            <a data-transition="slide" style="background-color: #8A5241;color: #fff" data-role="button" id="enext"
+               href="">Update</a>
+        </div>
     </div>
-
 
 </div>
 
@@ -411,7 +564,7 @@
     <div data-role="header" style="background-color: #8A5241">
         <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
 
-        <a href="#loginpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse"><i
+        <a href="#myloanpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse"><i
                 class="zmdi zmdi zmdi-arrow-back"></i></a>
     </div>
 
@@ -644,7 +797,7 @@
     <div data-role="header" style="background-color: #8A5241">
         <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
 
-        <a href="#loginpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
+        <a href="#loanpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
             <i class="zmdi zmdi zmdi-arrow-back"></i>
         </a>
     </div>
