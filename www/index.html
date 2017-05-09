@@ -29,6 +29,7 @@
     <script src="./js/nativedroid2.js"></script>
     <script src="./js/nd2settings.js"></script>
     <script type="text/javascript" src="./js/myscript.js"></script>
+    <script type="text/javascript" src="./js/validate.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -84,7 +85,7 @@
         <br>
         <!---->
         <div>
-            <a data-role="button" data-transition="slide" href="#myloanpage" id="loginbutton"
+            <a data-role="button" data-transition="slide" onclick="login()" id="loginbutton"
                style="background-color: #8A5241;color: #fff">Login</a>
         </div>
         <!---->
@@ -309,7 +310,7 @@
 
         <label style="font-size: 14px">Expiry Date</label>
         <div>
-            <input type="text" id="eedate" style="text-align: center">
+            <input type="date" id="eedate" style="text-align: center">
         </div>
         <br>
         <div class="align-center">
@@ -382,7 +383,7 @@
 
         <label style="font-size: 14px">Spouse Mobile Number</label>
         <div>
-            <input type="text" id="espousetel" style="text-align: center">
+            <input type="tel" id="espousetel" style="text-align: center">
         </div>
         <br>
         <div>
@@ -429,10 +430,10 @@
     <div data-role="content">
 
         <div class="align-center">
-            <label for="title">Title</label>
+            <label for="stitle">Title</label>
         </div>
 
-        <select name="title" id="title">
+        <select name="title" id="stitle">
             <option value="1">MR</option>
             <option value="2">MISS</option>
             <option value="3">MRS</option>
@@ -445,78 +446,74 @@
         <!--name-->
         <label style="font-size: 14px">Surname</label>
         <div>
-            <input type="text" id="sname" style="text-align: center">
+            <input type="text" id="sname" style="text-align: center;" onblur="validate_sname()">
         </div>
 
         <label style="font-size: 14px">First Name</label>
         <div>
-            <input type="text" id="fname" style="text-align: center">
+            <input type="text" id="fname" style="text-align: center" onblur="validate_fname()">
         </div>
 
         <label style="font-size: 14px">Other Names</label>
         <div>
-            <input type="text" id="oname" required style="text-align: center">
+            <input type="text" id="oname" required style="text-align: center" onblur="validate_oname()">
         </div>
 
         <label style="font-size: 14px">Name of Spouse</label>
         <div>
-            <input type="text" id="spousename" style="text-align: center">
+            <input type="text" id="spousename" style="text-align: center" onblur="validate_spousename()">
         </div>
 
         <label style="font-size: 14px">Number of Children</label>
         <div>
-            <input type="number" id="numchilren" style="text-align: center">
+            <input type="number" id="numchilren" style="text-align: center" onblur="validate_numchildren()">
         </div>
 
         <label style="font-size: 14px">Residential Address</label>
         <div>
-            <input type="text" id="raddress" style="text-align: center">
+            <input type="text" id="raddress" style="text-align: center" onblur="validate_raddress()">
         </div>
 
         <label style="font-size: 14px">Telephone Number(Mobile)</label>
         <div>
-            <input type="text" id="mtel" style="text-align: center">
+            <input type="tel" id="mtel" style="text-align: center" onblur="validate_mtel()">
         </div>
 
-        <label style="font-size: 14px">Telephone Number(Office)</label>
+        <label style="font-size: 14px">Telephone Number(Official)</label>
         <div>
-            <input type="text" id="otel" style="text-align: center">
+            <input type="tel" id="otel" style="text-align: center" onblur="validate_otel()">
         </div>
 
-        <label style="font-size: 14px">Telephone Number(Home)</label>
-        <div>
-            <input type="text" id="htel" style="text-align: center">
-        </div>
         <hr>
         <!---->
         <label style="font-size: 14px">Date of Birth</label>
         <div>
-            <input type="date" id="dob" style="text-align: center">
+            <input type="date" id="dob" style="text-align: center" onblur="validate_dob()">
         </div>
 
         <label style="font-size: 14px">Email</label>
         <div>
-            <input type="email" id="email" style="text-align: center">
+            <input type="email" id="email" style="text-align: center" onblur="validate_email()">
         </div>
 
         <label style="font-size: 14px">Occupation</label>
         <div>
-            <input type="text" id="occup" style="text-align: center">
+            <input type="text" id="occup" style="text-align: center" onblur="validate_occupation()">
         </div>
 
         <label style="font-size: 14px">Nationality</label>
         <div>
-            <input type="text" id="nation" style="text-align: center">
+            <input type="text" id="nation" style="text-align: center" onblur="validate_nation()">
         </div>
 
         <label style="font-size: 14px">Name of Employer</label>
         <div>
-            <input type="text" id="ename" style="text-align: center">
+            <input type="text" id="ename" style="text-align: center" onblur="validate_ename()">
         </div>
 
         <label style="font-size: 14px">Employer Address</label>
         <div>
-            <input type="text" id="eaddress" style="text-align: center">
+            <input type="text" id="eaddress" style="text-align: center" onblur="validate_eaddress()">
         </div>
         <hr>
 
@@ -556,7 +553,7 @@
         <div class="align-center">
             <label for="title">Identification</label>
         </div>
-        <select name="Monthly Income" id="id">
+        <select name="Monthly Income" id="iden">
             <option value="1">PASSPORT</option>
             <option value="2">VOTER</option>
             <option value="3">DRIVER'S LICENSE</option>
@@ -565,17 +562,17 @@
 
         <label style="font-size: 14px">ID Number</label>
         <div>
-            <input type="text" id="idnum" style="text-align: center">
+            <input type="text" id="idnum" style="text-align: center" onblur="validate_idnum()">
         </div>
 
         <label style="font-size: 14px">Date of Issue</label>
         <div>
-            <input type="date" id="doi" style="text-align: center">
+            <input type="date" id="doi" style="text-align: center" onblur="validate_doi()">
         </div>
 
         <label style="font-size: 14px">Expiry Date</label>
         <div>
-            <input type="text" id="edate" style="text-align: center">
+            <input type="date" id="edate" style="text-align: center" onblur="validate_edate()">
         </div>
 
         <div class="align-center">
@@ -593,66 +590,90 @@
 
         <label style="font-size: 14px">Hometown</label>
         <div>
-            <input type="text" id="hometown" style="text-align: center">
+            <input type="text" id="hometown" style="text-align: center" onblur="validate_hometown()">
         </div>
 
         <label style="font-size: 14px">Social Security</label>
         <div>
-            <input type="text" id="soc_sec" style="text-align: center">
+            <input type="text" id="soc_sec" style="text-align: center" onblur="validate_soc_sec()">
         </div>
 
         <label style="font-size: 14px">Number of Members in Household</label>
         <div>
-            <input type="number" id="nummembers" style="text-align: center">
+            <input type="number" id="nummembers" style="text-align: center" onblur="validate_nummembers()">
         </div>
 
         <label style="font-size: 14px">Number of Dependants</label>
         <div>
-            <input type="number" id="num-dependants" style="text-align: center">
+            <input type="number" id="numdep" style="text-align: center" onblur="validate_numdep()">
         </div>
 
         <label style="font-size: 14px">Father's Name</label>
         <div>
-            <input type="text" id="father" style="text-align: center">
+            <input type="text" id="father" style="text-align: center" onblur="validate_father()">
         </div>
 
         <label style="font-size: 14px">Mother's Name</label>
         <div>
-            <input type="text" id="mother" style="text-align: center">
+            <input type="text" id="mother" style="text-align: center" onblur="validate_mother()">
         </div>
 
         <label style="font-size: 14px">Next of Kin's Name</label>
         <div>
-            <input type="text" id="kinname" style="text-align: center">
+            <input type="text" id="kinname" style="text-align: center" onblur="validate_kinname()">
         </div>
 
         <label style="font-size: 14px">Next of Kin's Address</label>
         <div>
-            <input type="text" id="kinaddress" style="text-align: center">
+            <input type="text" id="kinaddress" style="text-align: center" onblur="validate_kinaddress()">
         </div>
 
         <label style="font-size: 14px">Next of Kin's Mobile Number</label>
         <div>
-            <input type="text" id="kintel" style="text-align: center">
+            <input type="tel" id="kintel" style="text-align: center" onblur="validate_kintel()">
         </div>
 
         <label style="font-size: 14px">Relationship To Next Of Kin</label>
         <div>
-            <input type="text" id="kinrel" style="text-align: center">
+            <input type="text" id="kinrel" style="text-align: center" onblur="validate_kinrel()">
         </div>
 
         <label style="font-size: 14px">Spouse Address</label>
         <div>
-            <input type="text" id="spouseaddress" style="text-align: center">
+            <input type="text" id="spouseaddress" style="text-align: center" onblur="validate_spouseaddress()">
         </div>
 
         <label style="font-size: 14px">Spouse Mobile Number</label>
         <div>
-            <input type="text" id="spousetel" style="text-align: center">
+            <input type="tel" id="spousetel" style="text-align: center" onblur="validate_spousetel()">
         </div>
         <br>
+        <!--login details-->
+        <div class="align-center">
+            <label style="font-size: 15px; color: #8A5241">Login Details</label>
+        </div>
+
+        <!--Username-->
+        <label style="font-size: 15px">Username</label>
         <div>
-            <a data-transition="slide" style="background-color: #8A5241;color: #fff" data-role="button" id="next"
+            <input type="text" id="susername" style="text-align: center" onblur="validate_susername()">
+        </div>
+
+        <!--password-->
+        <label style="font-size: 15px">Password</label>
+        <div>
+            <input type="password" id="spassword" style="text-align: center" onblur="validate_spassword()">
+        </div>
+
+        <!--Confirm Password-->
+        <label style="font-size: 15px">Confirm Password</label>
+        <div>
+            <input type="password" id="scpassword" style="text-align: center" onblur="validate_scpassword()">
+        </div>
+        <br>
+
+        <div>
+            <a data-transition="slide" style="background-color: #8A5241; color: #fff;" data-role="button"
                href="#declarepage">Next</a>
         </div>
     </div>
@@ -670,13 +691,13 @@
     <div data-role="content">
         <label style="font-size: 14px">Picture</label>
         <div>
-            <input type="file" id="pic" style="text-align: center">
+            <input type="file" id="pic" style="text-align: center" onblur="validate_pic()">
         </div>
 
         <br>
 
         <div class="align-center">
-            <label for="title">Identification</label>
+            <label>Identification</label>
         </div>
         <div class="align-center">
             <img src="" height="200px" width="200px">
@@ -691,15 +712,15 @@
             </p>
         </div>
 
-        <select name="Monthly Income" id="agree">
-            <option value="1">I Do Not Agree</option>
-            <option value="2">I Agree</option>
+        <select name="" id="agree" onchange="hideDoneButton()">
+            <option value="1">I Agree</option>
+            <option value="2">I Do Not Agree</option>
         </select>
 
         <br>
         <br>
         <div class="align-center">
-            <a data-role="button" id="createaccbtn" style="background-color: #8A5241;color: #fff">Done</a>
+            <a data-role="button" id="createaccbtn" style="background-color: #8A5241;color: #fff" onclick="sign_up()">Done</a>
         </div>
     </div>
 </div>
@@ -722,6 +743,11 @@
         <label style="font-size: 14px">Surname</label>
         <div>
             <input type="text" id="lsname" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">First Name</label>
+        <div>
+            <input type="text" id="lfname" style="text-align: center">
         </div>
 
         <label style="font-size: 14px">Other Names</label>
