@@ -100,7 +100,7 @@ function get_fields_create() {
     pic = $("#pic").val();
 }
 
-function get_fields_loans(){
+function get_fields_loans() {
 
 }
 
@@ -310,5 +310,9 @@ function hideDoneButton() {
     //alert("hide");
     //}
 
+}
+
+function myloans(){
+    change_page("#myloanpage", "slide");
 }
 

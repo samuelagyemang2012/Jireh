@@ -112,15 +112,31 @@
                    href="#myloanpage">Loans</a>
             </li>
 
-            <li data-tab="add" class="nav-item waves-effect waves-button waves-light">
-                <a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"
-                   href="#editpage">MY ACCOUNT</a>
-            </li>
+            <!--<li data-tab="add" class="nav-item waves-effect waves-button waves-light">-->
+            <!--<a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"-->
+            <!--href="#editpage">MY ACCOUNT</a>-->
+            <!--</li>-->
         </ul>
     </div>
 
     <div data-role="content" id="myloans">
-
+        <div class='nd2-card'>
+            <div class='card-title'>
+                <h4 class='card-primary-title' style='color: #8A5241;'> Amount Requested </h4>
+                <h5>GHC 12000</h5>
+                <h4 class='card-primary-title' style='color: #8A5241;'> Status</h4>
+                <h5>Pending</h5>
+                <div class='card-action'>
+                    <div class='row between-xs'>
+                        <div class='col-xs-12 align-right'>
+                            <div class='box'>
+                                <a href='#' class='ui-btn ui-btn-inline ui-btn-fab waves-effect waves-button waves-effect waves-button'></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--footer-->
@@ -155,10 +171,10 @@
                    href="#myloanpage">Loans</a>
             </li>
 
-            <li data-tab="add" class="nav-item waves-effect waves-button waves-light">
-                <a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"
-                   href="#editpage">MY ACCOUNT</a>
-            </li>
+            <!--<li data-tab="add" class="nav-item waves-effect waves-button waves-light">-->
+            <!--<a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"-->
+            <!--href="#editpage">MY ACCOUNT</a>-->
+            <!--</li>-->
         </ul>
     </div>
 
@@ -736,160 +752,155 @@
 
     <div data-role="content">
 
-        <div class="align-center">
-            <label style="font-size: 14px; color: #8A5241">Employment Details</label>
-        </div>
-
-        <label style="font-size: 14px">Surname</label>
-        <div>
-            <input type="text" id="lsname" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">First Name</label>
-        <div>
-            <input type="text" id="lfname" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Other Names</label>
-        <div>
-            <input type="text" id="loname" style="text-align: center">
-        </div>
-
-        <div class="align-center">
-            <label for="gender">Gender</label>
-        </div>
-        <select name="gender" id="gender">
-            <option value="1">MALE</option>
-            <option value="2">FEMALE</option>
-        </select>
-        <br>
-
-        <div class="align-center">
-            <label for="lid">ID Type</label>
-        </div>
-        <select name="lid" id="lid">
-            <option value="1">PASSPORT</option>
-            <option value="2">VOTER</option>
-            <option value="3">DRIVER'S LICENSE</option>
-            <option value="4">OTHER</option>
-        </select>
-        <br>
-
-        <label style="font-size: 14px">ID Number</label>
-        <div>
-            <input type="text" id="lidnum" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Date of Birth</label>
-        <div>
-            <input type="date" id="ldob" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Place of Birth</label>
-        <div>
-            <input type="text" id="lpob" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Nationality</label>
-        <div>
-            <input type="text" id="lnation" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Telephone Number</label>
-        <div>
-            <input type="tel" id="ltel" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Email</label>
-        <div>
-            <input type="email" id="lemail" style="text-align: center">
-        </div>
-        <br>
-        <div class="align-center">
-            <label for="lid">Marital Status</label>
-        </div>
-
-        <select name="lmstatus" id="lmstatus">
-            <option value="1">MARRIED</option>
-            <option value="2">DIVORCED</option>
-            <option value="3">SINGLE</option>
-            <option value="4">OTHER</option>
-        </select>
-        <br>
-
-        <label style="font-size: 14px">Spouse(If applicable)</label>
-        <div>
-            <input type="text" id="lspouse" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Occupation of Spouse</label>
-        <div>
-            <input type="text" id="lsoccup" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Telephone Number of Spouse</label>
-        <div>
-            <input type="tel" id="lstel" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Postal Address</label>
-        <div>
-            <input type="text" id="lpaddress" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Residential Address</label>
-        <div>
-            <input type="text" id="lraddress" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Landmark</label>
-        <div>
-            <input type="text" id="lmark" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Number of Dependencies</label>
-        <div>
-            <input type="number" id="lnod" style="text-align: center">
-        </div>
-        <hr>
-
-        <div class="align-center">
-            <label style="font-size: 14px; color: #8A5241">Employment Details</label>
-        </div>
-        <br>
-        <label style="font-size: 14px">Name of Employer</label>
-        <div>
-            <input type="text" id="lename" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Address of Employer</label>
-        <div>
-            <input type="text" id="leaddress" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Number of Years in Current Employment</label>
-        <div>
-            <input type="number" id="leyears" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Position Held</label>
-        <div>
-            <input type="text" id="lpos" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Location</label>
-        <div>
-            <input type="text" id="leloc" style="text-align: center">
-        </div>
-
+        <!--<div class="align-center">-->
+        <!--<label style="font-size: 14px; color: #8A5241">Employment Details</label>-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Surname</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lsname" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">First Name</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lfname" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Other Names</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="loname" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<div class="align-center">-->
+        <!--<label for="gender">Gender</label>-->
+        <!--</div>-->
+        <!--<select name="gender" id="gender">-->
+        <!--<option value="1">MALE</option>-->
+        <!--<option value="2">FEMALE</option>-->
+        <!--</select>-->
+        <!--<br>-->
+        <!---->
+        <!--<div class="align-center">-->
+        <!--<label for="lid">ID Type</label>-->
+        <!--</div>-->
+        <!--<select name="lid" id="lid">-->
+        <!--<option value="1">PASSPORT</option>-->
+        <!--<option value="2">VOTER</option>-->
+        <!--<option value="3">DRIVER'S LICENSE</option>-->
+        <!--<option value="4">OTHER</option>-->
+        <!--</select>-->
+        <!--<br>-->
+        <!---->
+        <!--<label style="font-size: 14px">ID Number</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lidnum" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Date of Birth</label>-->
+        <!--<div>-->
+        <!--<input type="date" id="ldob" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Place of Birth</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lpob" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Nationality</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lnation" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Telephone Number</label>-->
+        <!--<div>-->
+        <!--<input type="tel" id="ltel" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Email</label>-->
+        <!--<div>-->
+        <!--<input type="email" id="lemail" style="text-align: center">-->
+        <!--</div>-->
+        <!--<br>-->
+        <!--<div class="align-center">-->
+        <!--<label for="lid">Marital Status</label>-->
+        <!--</div>-->
+        <!---->
+        <!--<select name="lmstatus" id="lmstatus">-->
+        <!--<option value="1">MARRIED</option>-->
+        <!--<option value="2">DIVORCED</option>-->
+        <!--<option value="3">SINGLE</option>-->
+        <!--<option value="4">OTHER</option>-->
+        <!--</select>-->
+        <!--<br>-->
+        <!---->
+        <!--<label style="font-size: 14px">Spouse(If applicable)</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lspouse" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Occupation of Spouse</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lsoccup" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Telephone Number of Spouse</label>-->
+        <!--<div>-->
+        <!--<input type="tel" id="lstel" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Postal Address</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lpaddress" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Residential Address</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lraddress" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Landmark</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lmark" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Number of Dependencies</label>-->
+        <!--<div>-->
+        <!--<input type="number" id="lnod" style="text-align: center">-->
+        <!--</div>-->
+        <!--<hr>-->
+        <!---->
+        <!--<div class="align-center">-->
+        <!--<label style="font-size: 14px; color: #8A5241">Employment Details</label>-->
+        <!--</div>-->
+        <!--<br>-->
+        <!--<label style="font-size: 14px">Name of Employer</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lename" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Address of Employer</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="leaddress" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Number of Years in Current Employment</label>-->
+        <!--<div>-->
+        <!--<input type="number" id="leyears" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Position Held</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="lpos" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
+        <!--<label style="font-size: 14px">Location</label>-->
+        <!--<div>-->
+        <!--<input type="text" id="leloc" style="text-align: center">-->
+        <!--</div>-->
+        <!---->
         <label style="font-size: 14px">Net Monthly Salary/Sales (GHS)</label>
         <div>
             <input type="number" id="lsalary" style="text-align: center">
-        </div>
-
-        <label style="font-size: 14px">Salary Date</label>
-        <div>
-            <input type="date" id="lsaldate" style="text-align: center">
         </div>
 
         <label style="font-size: 14px">Any Other Source of Income</label>
@@ -900,6 +911,11 @@
         <label style="font-size: 14px">Bank/ Branch</label>
         <div>
             <input type="text" id="bank" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Salary Date</label>
+        <div>
+            <input type="date" id="lsaldate" style="text-align: center">
         </div>
         <hr>
 
@@ -956,10 +972,32 @@
             <option value="2">NO</option>
         </select>
         <br>
+
+        <div class="align-center">
+            <label style="font-size: 14px; color: #8A5241">Witness</label>
+        </div>
+
+        <label style="font-size: 14px">Witness Name</label>
+        <div>
+            <input type="text" id="wname" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Witness Occupation</label>
+        <div>
+            <input type="text" id="woccup" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Witness Telephone</label>
+        <div>
+            <input type="text" id="wtel" style="text-align: center">
+        </div>
+
         <div>
             <a data-role="button" id="lnext" style="background-color: #8A5241;color: #fff" href="#declarepage2">Next</a>
         </div>
         <br>
+
+
     </div>
 </div>
 
@@ -1008,7 +1046,7 @@
         <br>
 
         <div class="align-center">
-            <a data-role="button" id="loandone" style="background-color: #8A5241;color: #fff">Done</a>
+            <a data-role="button" id="loandone" style="background-color: #8A5241;color: #fff" onclick="myloans()">Done</a>
         </div>
 
     </div>
