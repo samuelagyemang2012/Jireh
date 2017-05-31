@@ -79,7 +79,7 @@
         </div>
         <!---->
         <div>
-            <input type="password" id="password" placeholder="Password" style="color: #4CAF50; text-align: center"
+            <input type="password" id="lpassword" placeholder="Password" style="color: #4CAF50; text-align: center"
                    required>
         </div>
         <br>
@@ -130,7 +130,8 @@
                     <div class='row between-xs'>
                         <div class='col-xs-12 align-right'>
                             <div class='box'>
-                                <a href='#' class='ui-btn ui-btn-inline ui-btn-fab waves-effect waves-button waves-effect waves-button'></a>
+                                <a href='#'
+                                   class='ui-btn ui-btn-inline ui-btn-fab waves-effect waves-button waves-effect waves-button'></a>
                             </div>
                         </div>
                     </div>
@@ -213,6 +214,13 @@
         <div>
             <input type="text" id="espousename" style="text-align: center">
         </div>
+        <br>
+
+        <label style="font-size: 14px">Spouse Mobile Number</label>
+        <div>
+            <input type="tel" id="espousetel" style="text-align: center">
+        </div>
+        <br>
 
         <label style="font-size: 14px">Number of Children</label>
         <div>
@@ -397,11 +405,6 @@
             <input type="text" id="espouseaddress" style="text-align: center">
         </div>
 
-        <label style="font-size: 14px">Spouse Mobile Number</label>
-        <div>
-            <input type="tel" id="espousetel" style="text-align: center">
-        </div>
-        <br>
         <div>
             <a data-transition="slide" style="background-color: #8A5241;color: #fff" data-role="button" id="enext"
                href="">Update</a>
@@ -444,301 +447,392 @@
     </div>
 
     <div data-role="content">
+        <form enctype="multipart/form-data">
+            <div>
+                <label>Title</label>
+                <select name="title" id="title" class="form-control">
+                    <option value="1">MR</option>
+                    <option value="2">MISS</option>
+                    <option value="3">MRS</option>
+                    <option value="4">DR</option>
+                    <option value="5">REV</option>
+                    <option value="6">OTHER</option>
+                </select>
+            </div>
+            <br>
 
-        <div class="align-center">
-            <label for="stitle">Title</label>
-        </div>
+            <label>Gender</label>
+            <select name="gender" id="gender" class="form-control">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <br>
 
-        <select name="title" id="stitle">
-            <option value="1">MR</option>
-            <option value="2">MISS</option>
-            <option value="3">MRS</option>
-            <option value="4">DR</option>
-            <option value="5">REV</option>
-            <option value="6">OTHER</option>
-        </select>
-        <br>
+            <label>Surname</label>
+            <div>
+                <input type="text" class="form-control" name="surname" id="surname" required
+                       onblur="validate('surname','surnamesp','2')" min="2">
+                <span id="surnamesp"></span>
+            </div>
+            <br>
 
-        <!--name-->
-        <label style="font-size: 14px">Surname</label>
-        <div>
-            <input type="text" id="sname" style="text-align: center;" onblur="validate_sname()">
-        </div>
+            <label>Firstname</label>
+            <div>
+                <input type="text" class="form-control" name="firstname" id="firstname" required
+                       onblur="validate('firstname','firstnamesp','2')"
+                       min="2">
+                <span id="firstnamesp"></span>
+            </div>
+            <br>
 
-        <label style="font-size: 14px">First Name</label>
-        <div>
-            <input type="text" id="fname" style="text-align: center" onblur="validate_fname()">
-        </div>
+            <label>Other names</label>
+            <div>
+                <input type="text" class="form-control" name="othernames" id="othernames">
+            </div>
+            <!--{{&#45;&#45;<span id="othernamesp"></span>&#45;&#45;}}-->
+            <br>
 
-        <label style="font-size: 14px">Other Names</label>
-        <div>
-            <input type="text" id="oname" required style="text-align: center" onblur="validate_oname()">
-        </div>
+            <label>Name of Spouse</label>
+            <div>
+                <input type="text" class="form-control" name="spousename" id="spousename">
+            </div>
+            <!--{{&#45;&#45;<span></span>&#45;&#45;}}-->
+            <br>
 
-        <label style="font-size: 14px">Name of Spouse</label>
-        <div>
-            <input type="text" id="spousename" style="text-align: center" onblur="validate_spousename()">
-        </div>
+            <label>Spouse Address</label>
+            <div>
+                <input type="text" class="form-control" name="saddress" id="saddress"
+                       min="">
+            </div>
+            <br>
 
-        <label style="font-size: 14px">Number of Children</label>
-        <div>
-            <input type="number" id="numchilren" style="text-align: center" onblur="validate_numchildren()">
-        </div>
+            <label>Spouse Mobile Number</label>
+            <div>
+                <input type="tel" class="form-control" name="stel" id="stel" min="10">
+            </div>
+            <br>
 
-        <label style="font-size: 14px">Residential Address</label>
-        <div>
-            <input type="text" id="raddress" style="text-align: center" onblur="validate_raddress()">
-        </div>
+            <label>Occupation of Spouse</label>
+            <div>
+                <input type="text" class="form-control" name="soccup" id="soccup" min="10">
+            </div>
+            <br>
 
-        <label style="font-size: 14px">Telephone Number(Mobile)</label>
-        <div>
-            <input type="tel" id="mtel" style="text-align: center" onblur="validate_mtel()">
-        </div>
+            <label>Number of Children</label>
+            <div>
+                <input type="number" class="form-control" name="num_children" id="numchildren" required min="0"
+                       onblur="validate('num_children','child','0')">
+            </div>
+            <span id="child"></span>
+            <br>
 
-        <label style="font-size: 14px">Telephone Number(Official)</label>
-        <div>
-            <input type="tel" id="otel" style="text-align: center" onblur="validate_otel()">
-        </div>
+            <label>Residential Address</label>
+            <div>
+                <input type="text" class="form-control" name="residential_address" id="raddress" required min="6"
+                       onblur="validate('raddress','rad','6')">
+            </div>
+            <span id="rad"></span>
+            <br>
 
-        <hr>
-        <!---->
-        <label style="font-size: 14px">Date of Birth</label>
-        <div>
-            <input type="date" id="dob" style="text-align: center" onblur="validate_dob()">
-        </div>
+            <label>Mailing Address</label>
+            <div>
+                <input type="text" class="form-control" name="mailing_address" id="maddress" required min="6"
+                       onblur="validate('maddress','mad','6')">
+            </div>
+            <span id="mad"></span>
+            <br>
 
-        <label style="font-size: 14px">Email</label>
-        <div>
-            <input type="email" id="email" style="text-align: center" onblur="validate_email()">
-        </div>
+            <label>Telephone(Mobile)</label>
+            <div>
+                <input type="tel" class="form-control" name="telephone_mobile" id="telmob" min="10" required
+                       onblur="validate('telmob','tmob','10')">
+            </div>
+            <span id="tmob"></span>
+            <br>
 
-        <label style="font-size: 14px">Occupation</label>
-        <div>
-            <input type="text" id="occup" style="text-align: center" onblur="validate_occupation()">
-        </div>
+            <label>Telephone(Official)</label>
+            <div>
+                <input type="tel" name="telephone_official" class="form-control" id="teloff" min="10" required
+                       onblur="validate('teloff','toff','10')">
+            </div>
+            <span id="toff"></span>
+            <br>
 
-        <label style="font-size: 14px">Nationality</label>
-        <div>
-            <input type="text" id="nation" style="text-align: center" onblur="validate_nation()">
-        </div>
+            <label>Date of Birth</label>
+            <div>
+                <input type="date" class="form-control" name="date_of_birth" id="dob" required
+                       onblur="validate('dob','db','7')">
+            </div>
+            <span id="db"></span>
+            <br>
 
-        <label style="font-size: 14px">Name of Employer</label>
-        <div>
-            <input type="text" id="ename" style="text-align: center" onblur="validate_ename()">
-        </div>
+            <label>Email</label>
+            <div>
+                <input type="email" class="form-control" name="email" id="email" required min="6"
+                       onblur="validate('email','em','6')">
+            </div>
+            <span id="em"></span>
+            <br>
 
-        <label style="font-size: 14px">Employer Address</label>
-        <div>
-            <input type="text" id="eaddress" style="text-align: center" onblur="validate_eaddress()">
-        </div>
-        <hr>
+            <label>Occupation</label>
+            <div>
+                <input type="text" class="form-control" name="occupation" id="occupation" required min="5"
+                       onblur="validate('occupation','occup','5')">
+            </div>
+            <span id="occup"></span>
+            <br>
 
-        <div class="align-center">
-            <label for="title">Marital Status</label>
-        </div>
-        <select name="title" id="mstatus">
-            <option value="1">MARRIED</option>
-            <option value="2">DIVORCED</option>
-            <option value="3">SINGLE</option>
-            <option value="4">OTHER</option>
-        </select>
-        <br>
+            <label>Position Held</label>
+            <div>
+                <input type="text" class="form-control" name="position" id="position" required
+                       min="5" onblur="validate('position','pos','5')">
+            </div>
+            <span id="pos"></span>
+            <br>
 
-        <div class="align-center">
-            <label for="title">Source of Funds</label>
-        </div>
-        <select name="source of Funds" id="funds">
-            <option value="1">SALARY</option>
-            <option value="2">TRADING</option>
-            <option value="3">INVESTMENT</option>
-            <option value="4">OTHER</option>
-        </select>
-        <br>
+            <label>Nationality</label>
+            <div>
+                <input type="text" class="form-control" name="nationality" id="nationality" required
+                       min="5" onblur="validate('nationality','nation','5')">
+            </div>
+            <span id="nation"></span>
+            <br>
 
-        <div class="align-center">
-            <label for="title">Monthly Income (GHS)</label>
-        </div>
-        <select name="Monthly Income" id="mincome">
-            <option value="1">1---1000</option>
-            <option value="2">1001-2000</option>
-            <option value="3">2001-5000</option>
-            <option value="3">5001 Plus</option>
-        </select>
-        <br>
+            <label>Number of Years in Current Employment</label>
+            <div>
+                <input type="number" class="form-control" name="numyears" id="numyears" required
+                       min="1" onblur="validate('numyears','nyears','1')">
+            </div>
+            <span id="nyears"></span>
+            <br>
 
-        <div class="align-center">
-            <label for="title">Identification</label>
-        </div>
-        <select name="Monthly Income" id="iden">
-            <option value="1">PASSPORT</option>
-            <option value="2">VOTER</option>
-            <option value="3">DRIVER'S LICENSE</option>
-            <option value="3">OTHER</option>
-        </select>
+            <label>Employer Name</label>
+            <div>
+                <input type="text" class="form-control" name="employer_name" id="empname" required
+                       min="5" onblur="validate('empname','ename','5')">
+            </div>
+            <span id="ename"></span>
+            <br>
 
-        <label style="font-size: 14px">ID Number</label>
-        <div>
-            <input type="text" id="idnum" style="text-align: center" onblur="validate_idnum()">
-        </div>
+            <label>Employer Address</label>
+            <div>
+                <input type="text" class="form-control" name="employer_address" id="empaddress" required
+                       min="5" onblur="validate('empaddress','eadd','5')">
+            </div>
+            <span id="eadd"></span>
+            <br>
 
-        <label style="font-size: 14px">Date of Issue</label>
-        <div>
-            <input type="date" id="doi" style="text-align: center" onblur="validate_doi()">
-        </div>
+            <label>Marital Status</label>
+            <select name="marital_status" id="mstatus" class="form-control">
+                <option value="1">MARRIED</option>
+                <option value="2">DIVORCED</option>
+                <option value="3">SINGLE</option>
+                <option value="4">OTHER</option>
+            </select>
+            <br>
 
-        <label style="font-size: 14px">Expiry Date</label>
-        <div>
-            <input type="date" id="edate" style="text-align: center" onblur="validate_edate()">
-        </div>
+            <label>Source of Funds</label>
+            <select name="source_of_funds" id="sof" class="form-control">
+                <option value="1">SALARY</option>
+                <option value="2">TRADING</option>
+                <option value="3">INVESTMENT</option>
+                <option value="4">OTHER</option>
+            </select>
+            <br>
 
-        <div class="align-center">
-            <label for="title">Literacy Level</label>
-        </div>
-        <select name="literacy level" id="literacy">
-            <option value="1">Univeristy</option>
-            <option value="2">College/Polytechnic</option>
-            <option value="3">Secondary</option>
-            <option value="4">Primary</option>
-            <option value="5">No Formal Education</option>
-            <option value="6">Other</option>
-        </select>
-        <br>
+            <label>Monthly Income (GHS)</label>
+            <select name="monthly_income" id="mincome" class="form-control">
+                <option value="1">1---1000</option>
+                <option value="2">1001---2000</option>
+                <option value="3">2001---5001</option>
+                <option value="4">5001 Plus</option>
+            </select>
+            <br>
 
-        <label style="font-size: 14px">Hometown</label>
-        <div>
-            <input type="text" id="hometown" style="text-align: center" onblur="validate_hometown()">
-        </div>
-
-        <label style="font-size: 14px">Social Security</label>
-        <div>
-            <input type="text" id="soc_sec" style="text-align: center" onblur="validate_soc_sec()">
-        </div>
-
-        <label style="font-size: 14px">Number of Members in Household</label>
-        <div>
-            <input type="number" id="nummembers" style="text-align: center" onblur="validate_nummembers()">
-        </div>
-
-        <label style="font-size: 14px">Number of Dependants</label>
-        <div>
-            <input type="number" id="numdep" style="text-align: center" onblur="validate_numdep()">
-        </div>
-
-        <label style="font-size: 14px">Father's Name</label>
-        <div>
-            <input type="text" id="father" style="text-align: center" onblur="validate_father()">
-        </div>
-
-        <label style="font-size: 14px">Mother's Name</label>
-        <div>
-            <input type="text" id="mother" style="text-align: center" onblur="validate_mother()">
-        </div>
-
-        <label style="font-size: 14px">Next of Kin's Name</label>
-        <div>
-            <input type="text" id="kinname" style="text-align: center" onblur="validate_kinname()">
-        </div>
-
-        <label style="font-size: 14px">Next of Kin's Address</label>
-        <div>
-            <input type="text" id="kinaddress" style="text-align: center" onblur="validate_kinaddress()">
-        </div>
-
-        <label style="font-size: 14px">Next of Kin's Mobile Number</label>
-        <div>
-            <input type="tel" id="kintel" style="text-align: center" onblur="validate_kintel()">
-        </div>
-
-        <label style="font-size: 14px">Relationship To Next Of Kin</label>
-        <div>
-            <input type="text" id="kinrel" style="text-align: center" onblur="validate_kinrel()">
-        </div>
-
-        <label style="font-size: 14px">Spouse Address</label>
-        <div>
-            <input type="text" id="spouseaddress" style="text-align: center" onblur="validate_spouseaddress()">
-        </div>
-
-        <label style="font-size: 14px">Spouse Mobile Number</label>
-        <div>
-            <input type="tel" id="spousetel" style="text-align: center" onblur="validate_spousetel()">
-        </div>
-        <br>
-        <!--login details-->
-        <div class="align-center">
-            <label style="font-size: 15px; color: #8A5241">Login Details</label>
-        </div>
-
-        <!--Username-->
-        <label style="font-size: 15px">Username</label>
-        <div>
-            <input type="text" id="susername" style="text-align: center" onblur="validate_susername()">
-        </div>
-
-        <!--password-->
-        <label style="font-size: 15px">Password</label>
-        <div>
-            <input type="password" id="spassword" style="text-align: center" onblur="validate_spassword()">
-        </div>
-
-        <!--Confirm Password-->
-        <label style="font-size: 15px">Confirm Password</label>
-        <div>
-            <input type="password" id="scpassword" style="text-align: center" onblur="validate_scpassword()">
-        </div>
-        <br>
-
-        <div>
-            <a data-transition="slide" style="background-color: #8A5241; color: #fff;" data-role="button"
-               href="#declarepage">Next</a>
-        </div>
-    </div>
-</div>
-
-<!--declaration page-->
-<div data-role="page" id="declarepage">
-    <div data-role="header" style="background-color: #8A5241">
-        <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
-
-        <a href="#createmyloanpage" class="ui-btn ui-btn-icon-right" data-transition="slide"
-           data-direction="reverse"><i class="zmdi zmdi zmdi-arrow-back"></i></a>
-    </div>
-
-    <div data-role="content">
-        <label style="font-size: 14px">Picture</label>
-        <div>
-            <input type="file" id="pic" style="text-align: center" onblur="validate_pic()">
-        </div>
-
-        <br>
-
-        <div class="align-center">
             <label>Identification</label>
-        </div>
-        <div class="align-center">
-            <img src="" height="200px" width="200px">
-        </div>
-        <hr>
+            <select name="identification" id="identification" class="form-control">
+                <option value="1">PASSPORT</option>
+                <option value="2">VOTER</option>
+                <option value="3">DRIVER'S LICENSE</option>
+                <option value="4">OTHER</option>
+            </select>
+            <br>
 
-        <div style="text-align: justify">
-            <p style="color: #8A5241">
-                <b>I/We certify that the above statements are true and complete. By signing below,I/We agree to abide by
-                    the terms and conditions of this account and agree to be bound by them.
-                </b>
+            <label>ID Number</label>
+            <div>
+                <input type="text" class="form-control" name="identification_number" id="idnum" required
+                       min="5" onblur="validate('idnum','idn','5')">
+            </div>
+            <span id="idn"></span>
+            <br>
+
+            <label>Date of Issue</label>
+            <div>
+                <input type="date" class="form-control" name="issuedate" id="issuedate" required
+                       onblur="validate('issuedate','idate','7')">
+            </div>
+            <span id="idate"></span>
+            <br>
+
+            <label>Expiry Date</label>
+            <div>
+                <input type="date" class="form-control" name="expirydate" id="expirydate" required
+                       onblur="validate('expirydate','exp','7')">
+            </div>
+            <span id="exp"></span>
+            <br>
+
+            <label>Literacy</label>
+            <select name="literacy" id="literacy" class="form-control">
+                <option value="1">UNIVERSITY</option>
+                <option value="2">COLLEGE/POLYTECHNIC</option>
+                <option value="3">SECONDARY</option>
+                <option value="4">PRIMARY</option>
+                <option value="5">NO FORMAL EDUCATION</option>
+                <option value="6">PRIMARY</option>
+            </select>
+            <br>
+
+            <label>Hometown</label>
+            <div>
+                <input type="text" class="form-control" name="hometown" id="hometown" required
+                       min="5" onblur="validate('hometown','h','5')">
+            </div>
+            <span id="h"></span>
+            <br>
+
+            <label>Social Security Number</label>
+            <div>
+                <input type="text" class="form-control" name="social_security" id="scnumber" required
+                       min="5" onblur="validate('scnumber','soc','5')">
+            </div>
+            <span id="soc"></span>
+            <br>
+
+            <label>Number of Member in Household</label>
+            <div>
+                <input type="number" class="form-control" name="numhousehold" id="numhousehold" required
+                       min="1" onblur="validate('numhousehold','nh','1')">
+            </div>
+            <span id="nh"></span>
+            <br>
+
+            <label>Number of Dependants</label>
+            <div>
+                <input type="number" class="form-control" name="numdependants" id="numdependants" required
+                       min="1" onblur="validate('numdependants','nd','1')">
+            </div>
+            <span id="nd"></span>
+            <br>
+
+            <label>Father's Name</label>
+            <div>
+                <input type="text" class="form-control" name="father" id="father" required min="2"
+                       onblur="validate('father','fa','2')">
+            </div>
+            <span id="fa"></span>
+            <br>
+
+            <label>Mother's Name</label>
+            <div>
+                <input type="text" class="form-control" name="mother" id="mother" required
+                       min="2" onblur="validate('mother','mo','2')">
+            </div>
+            <span id="mo"></span>
+            <br>
+
+            <label>Next of Kin's Name</label>
+            <div>
+                <input type="text" class="form-control" name="kname" id="kname" required
+                       min="2" onblur="validate('kname','kn','2')">
+            </div>
+            <span id="kn"></span>
+            <br>
+
+            <label>Next of Kin's Address</label>
+            <div>
+                <input type="text" class="form-control" name="kaddress" id="kaddress" required
+                       min="5" onblur="validate('kaddress','ka','5')">
+            </div>
+            <span id="ka"></span>
+            <br>
+
+            <label>Next of Kin's Mobile Number</label>
+            <div>
+                <input type="tel" class="form-control" name="ktel" id="ktel" min="10" required
+                       min="10" onblur="validate('ktel','kt','10')">
+            </div>
+            <span id="kt"></span>
+            <br>
+
+            <label>Relationship to Kin's Name</label>
+            <div>
+                <input type="text" class="form-control" name="krel" id="krel" required
+                       min="3" onblur="validate('krel','kr','3')">
+            </div>
+            <span id="kr"></span>
+            <br>
+
+            <!--{{&#45;&#45;<label>Username</label>&#45;&#45;}}-->
+            <!--{{&#45;&#45;<div>&#45;&#45;}}-->
+            <!--{{&#45;&#45;<input type="text" class="form-control" name="username" id="username" required>&#45;&#45;}}-->
+            <!--{{&#45;&#45;</div>&#45;&#45;}}-->
+            <!--{{&#45;&#45;<br>&#45;&#45;}}-->
+
+            <label>Password</label>
+            <div>
+                <input type="password" class="form-control" name="password" id="password" required min="6"
+                       onblur="validate('password','pass','6')">
+            </div>
+            <span id="pass"></span>
+            <br>
+
+            <label>Confirm Password</label>
+            <div>
+                <input type="password" class="form-control" name="cpassword" id="cpassword" required min="6"
+                       onblur="validate('cpassword')">
+            </div>
+            <br>
+
+            <h2>Declaration</h2>
+            <p>
+                I/We certify that the above statements are true and complete. By signing below, I/We agree to
+                abide by
+                the
+                terms
+                and conditions of this account and agree to be bound by them.
             </p>
-        </div>
+            <br>
 
-        <select name="" id="agree" onchange="hideDoneButton()">
-            <option value="1">I Agree</option>
-            <option value="2">I Do Not Agree</option>
-        </select>
 
-        <br>
-        <br>
-        <div class="align-center">
-            <a data-role="button" id="createaccbtn" style="background-color: #8A5241;color: #fff" onclick="sign_up()">Done</a>
-        </div>
+            <img src="" id="image" height="200px" width="200px"/>
+
+            <br>
+            <br>
+            <label>Upload Picture</label>
+            <div>
+                <input type="file" class="form-control" name="pic" id="pic" required
+                       onblur="validate('pic')" onchange="readURL(this)">
+            </div>
+            <br>
+            <br>
+
+            <div>
+                <select name="agree" id="agree" class="form-control">
+                    <option value="1">I Agree</option>
+                    <option value="2">I Do Not Agree</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <button type="" onclick="add_client()" class="btn btn-primary"
+                        style="background-color: #8A5241; color: #fff">SUBMIT
+                </button>
+            </div>
+        </form>
     </div>
+
 </div>
 
 <!--Loan page-->
@@ -1046,7 +1140,8 @@
         <br>
 
         <div class="align-center">
-            <a data-role="button" id="loandone" style="background-color: #8A5241;color: #fff" onclick="myloans()">Done</a>
+            <a data-role="button" id="loandone" style="background-color: #8A5241;color: #fff"
+               onclick="myloans()">Done</a>
         </div>
 
     </div>

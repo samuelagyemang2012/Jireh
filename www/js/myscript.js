@@ -1,6 +1,6 @@
 var global_id, global_username, global_telephone, global_password, global_length;
 var hide = 0;
-var stitle, sname, fname, oname, spousename, numchildren, raddress, mtel, otel, dob, email, occup, nation, ename, eaddress, mstatus, funds, mincome, iden, idnum, doi, edate, literacy, hometown, soc_sec, nummembers, numdep, father, mother, kinname, kinaddress, kintel, kinrel, spouseaddress, spousetel, susername, spassword, scpassword, pic;
+var stitle, gender, sname, fname, oname, spousename, numchildren, raddress, mtel, otel, dob, email, occup, nation, ename, eaddress, mstatus, funds, mincome, iden, idnum, doi, edate, literacy, hometown, soc_sec, nummembers, numdep, father, mother, kinname, kinaddress, kintel, kinrel, spouseaddress, spousetel, susername, spassword, scpassword, pic;
 
 $(function () {
     //$("[data-role=header]").toolbar();
@@ -24,42 +24,50 @@ function change_page(page, transition) {
 
 function login() {
 
-    var url, username, password, obj;
+    var url, username, password;
+
 
     username = $("#username").val();
-    password = $("#password").val();
+    password = $("#lpassword").val();
 
-    //not null
-    if (username.length > 0 && password.length > 0) {
+    $.get("http://5.9.86.210:19111/api/login/" + username + "/" + password,
 
-        //api
-        //url = "./server-side/controller.php?cmd=2&username=" + username + "&password=" + password;
-        //obj = send_request(url);
+        function (response) {
 
-        var result = 1
+            if (response.code == 1) {
+                change_page("#myloanpage", "slide");
+            }
 
-        if (result == 1) {
+        });
+}
 
-            //global_id = obj.id;
+function add_client() {
 
-            //set_cookies(global_id);
+    //$("form").on("submit", function (event) {
+    //    event.preventDefault();
+    //    console.log($(this).serialize());
+    //});
 
-            setTimeout(
-                function () {
-                    change_page("#myloanpage", "slide");
-                }, 800);
+    var datastring = $("form").serialize();
 
-        } else {
-            $("#loginfailpopup").popup("open", {transition: "slide"});
+    $.ajax({
+        type: "GET",
+        url: "http://5.9.86.210:19111/api/add-client",
+        data: datastring,
+        dataType: "json",
+        success: function(data) {
+            //alert(data);
+        },
+        error: function() {
+            alert('error handing here');
         }
-    } else {
-        $("#loginfailpopup2").popup("open", {transition: "slide"});
-    }
+    });
 }
 
 function get_fields_create() {
 
     stitle = $("#stitle").val();
+    gender = $("#gender").val();
     sname = $("#sname").val();
     fname = $("#fname").val();
     oname = $("#oname").val();
@@ -312,7 +320,7 @@ function hideDoneButton() {
 
 }
 
-function myloans(){
+function myloans() {
     change_page("#myloanpage", "slide");
 }
 
