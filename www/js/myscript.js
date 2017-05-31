@@ -77,7 +77,7 @@ function get_loans(email) {
 
     //alert("dsa");
 
-    $.get("http: //5.9.86.210:1911/api/getloans/" + email,
+    $.get("http://5.9.86.210:19111/api/getloans/" + email,
 
         function (response) {
 
