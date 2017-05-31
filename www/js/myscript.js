@@ -35,22 +35,22 @@ function login() {
         function (response) {
 
             if (response.code == 1) {
-                $.cookie('email', username);
 
+                //alert("login");
+
+                $.cookie('email', username);
+                //
                 get_loans(username);
 
-                change_page("#myloanpage", "slide");
+                //change_page("#myloanpage", "slide");
+            } else {
+                alert('not login');
             }
 
         });
 }
 
 function add_client() {
-
-    //$("form").on("submit", function (event) {
-    //    event.preventDefault();
-    //    console.log($(this).serialize());
-    //});
 
     var datastring = $("form").serialize();
 
@@ -64,9 +64,40 @@ function add_client() {
             alert(data.msg);
         },
         error: function () {
-            change_page('loginpage#')
+            change_page('loginpage#', "");
         }
     });
+}
+
+function create_loan() {
+
+    $("#client_email").val($.cookie('email'));
+
+    var datastring = $("#loanform").serialize();
+
+    $.ajax({
+        type: "GET",
+        url: "http://5.9.86.210:19111/api/add-loan/",
+        data: datastring,
+        dataType: "json",
+        async: false,
+
+        success: function (data) {
+
+            if (data.code == 1) {
+
+                get_loans($.cookie('email'));
+                change_page("#myloanpage","");
+                //alert("dsad");
+
+            }
+        },
+        error: function () {
+            //change_page('loginpage#')
+            alert("opps");
+        }
+    });
+
 }
 
 function get_loans(email) {
@@ -83,7 +114,7 @@ function get_loans(email) {
 
             if (response.code == 1) {
 
-                console.log(response);
+                //console.log(response);
 
                 for (var i in response.data) {
 
@@ -107,69 +138,11 @@ function get_loans(email) {
                 }
 
                 $("#myloans").html(build);
+
+                change_page('#myloanpage', '');
             }
 
         });
 }
-
-
-//function get_fields_loans() {
-//
-//}
-
-//function get_profile_data() {
-//    var url, url1, id, obj, obj1, build;
-//
-//    id = global_id;
-//    build = "";
-//
-//    url = "./server-side/controller.php?cmd=1&id=" + id;
-//    url1 = "./server-side/controller.php?cmd=12&id=" + id;
-//
-//    obj = send_request(url);
-//    obj1 = send_request(url1);
-//
-//    if (obj1.result == 1) {
-//
-//        //alert(obj1.groups[0].group_name);
-//        for (var i in obj1.groups) {
-//            build += "build += " < p
-//        class
-//            = 'align-center' > " + obj1.groups[i].group_name + "
-//            build += "</p>";
-//        }
-//
-//        $("#pgroups").html(build);
-//    }
-//
-//    if (obj.result == 1) {
-//
-//        set_profile_info(obj.username, obj.firstname, obj.middlename, obj.lastname, obj.email, obj.phonenumber);
-//        //set_edit_info(obj.username, obj.firstname, obj.middlename, obj.lastname, obj.email, obj.phonenumber);
-//
-//        setTimeout(
-//            function () {
-//                change_page("#profilepage", "")
-//            }, 800);
-//    }//must have else;
-//}
-
-//function create_account() {
-//    var url, obj, build;
-//
-//    //stitle, sname, fname, oname, spousename, numchildren, raddress, mtel, otel, dob, email, occup, nation, ename, eaddress, mstatus, funds, mincome, iden, idnum, doi, edate, literacy, hometown, soc_sec, nummembers, numdep, father, mother, kinname, kinaddress, kintel, kinrel, spouseaddress, spousetel, susername, spassword, scpassword,pic
-//
-//    get_fields_create();
-//
-//    //url = "./server-side/controller.php?cmd=6&id=" + id;
-//    //obj = send_request(url);
-//
-//    change_page("#ainfopage", "pop");
-//}
-
-function create_loan() {
-
-}
-
 
 
