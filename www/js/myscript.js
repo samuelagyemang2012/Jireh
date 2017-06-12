@@ -1,21 +1,17 @@
-var global_id, global_username, global_telephone, global_password, global_length;
 var hide = 0;
-var stitle, gender, sname, fname, oname, spousename, numchildren, raddress, mtel, otel, dob, email, occup, nation, ename, eaddress, mstatus, funds, mincome, iden, idnum, doi, edate, literacy, hometown, soc_sec, nummembers, numdep, father, mother, kinname, kinaddress, kintel, kinrel, spouseaddress, spousetel, susername, spassword, scpassword, pic;
+var is_empty = false;
 
 $(function () {
     //$("[data-role=header]").toolbar();
     //$("[data-role=popup]").popup().enhanceWithin();
 });
 
-function send_request(url) {
-    "use strict";
-    var obj, result;
-    obj = $.ajax({
-        url: url,
-        async: false
-    });
-    result = $.parseJSON(obj.responseText);
-    return result;
+function popout_message(contentid, msg) {
+    $("#" + contentid).html(msg);
+}
+
+function popout(id, transition) {
+    $("#" + id).popup("open", {transition: transition});
 }
 
 function change_page(page, transition) {
@@ -36,15 +32,12 @@ function login() {
 
             if (response.code == 1) {
 
-                //alert("login");
-
                 $.cookie('email', username);
-                //
+
                 get_loans(username);
 
-                //change_page("#myloanpage", "slide");
             } else {
-                alert('not login');
+                popout('loginfailpopup', 'slide');
             }
 
         });
@@ -69,35 +62,84 @@ function add_client() {
     });
 }
 
-function create_loan() {
+function create_loan(e) {
+
+    e.preventDefault();
 
     $("#client_email").val($.cookie('email'));
 
-    var datastring = $("#loanform").serialize();
+    is_form_empty();
 
-    $.ajax({
-        type: "GET",
-        url: "http://5.9.86.210:19111/api/add-loan/",
-        data: datastring,
-        dataType: "json",
-        async: false,
+    var agree = $("#ag").val();
 
-        success: function (data) {
+    if (is_empty == true) {
+        popout('loanpopup2', 'slide');
+    }
 
-            if (data.code == 1) {
+    if (agree == 2) {
+        popout('loanpopup1', slide)
+    }
+
+
+    if (is_empty == false && agree == 1) {
+
+
+        e.preventDefault();
+        //
+        //$("#client_email").val($.cookie('email'));
+        //
+        var datastring = $("#loanform").serialize();
+
+        $.ajax({
+            type: 'get',
+            url: 'http://5.9.86.210:19111/api/add-loan?',
+            data: datastring,
+
+            success: function (results) {
 
                 get_loans($.cookie('email'));
-                change_page("#myloanpage","");
-                //alert("dsad");
 
+                popout('loanpopup', 'slide');
+
+                setTimeout(
+                    function () {
+                        change_page("#myloanpage", "slide");
+                    }, 1000);
+            },
+
+            error: function (results) {
+                //
+                //            //if (results.errors != null) {
+                //            //    alert(results.errors);
+                //            //}
+                //            //alert('error');
+                //            //popout_message('loanpopupmsg', "Your loan application was successful.");
+                //            //popout('loanpopup', 'slide');
             }
-        },
-        error: function () {
-            //change_page('loginpage#')
-            alert("opps");
-        }
-    });
+        });
 
+    }
+}
+
+function is_form_empty() {
+
+    var form = document.getElementById('loanform');
+    // get all the inputs within the submitted form
+    var inputs = form.getElementsByTagName('input');
+
+    for (var i = 0; i < inputs.length; i++) {
+        // only validate the inputs that have the required attribute
+
+        if (inputs[i].value == "") {
+            is_empty = true;
+            //alert(inputs[i].name);
+            break;
+        } else {
+            is_empty = false;
+        }
+    }
+
+    //is_empty = false;
 }
 
 function get_loans(email) {

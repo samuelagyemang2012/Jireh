@@ -244,6 +244,13 @@
 //        $("#pic").css("border", "1px solid crimson");
 //    }
 //}
+
+//var all_validated = false;
+
+//$(document).ready(function () {
+//    hideButton("true");
+//});
+
 function readURL(input) {
 
     if (input.files && input.files[0]) {
@@ -278,8 +285,18 @@ function validate(name, id, min) {
     if (data.length < min) {
         input.css('border', '1px solid red');
         span.html("<b style='color: crimson'>Minimum: " + m + "</b>");
+        hideButton("true");
     } else {
         input.css('border', '1px solid #5FFC3F');
         span.html('<b></b>');
+        hideButton("false");
+    }
+}
+
+function hideButton(status) {
+    if (status === "true") {
+        $("#addloanbutton").hide();
+    } else {
+        $("#addloanbutton").show();
     }
 }

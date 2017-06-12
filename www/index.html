@@ -471,7 +471,7 @@
             <label>Surname</label>
             <div>
                 <input type="text" class="form-control" name="surname" id="surname" required
-                       onblur="validate('surname','surnamesp','2')" min="2">
+                       onkeyup="validate('surname','surnamesp','2')" min="2">
                 <span id="surnamesp"></span>
             </div>
             <br>
@@ -479,7 +479,7 @@
             <label>Firstname</label>
             <div>
                 <input type="text" class="form-control" name="firstname" id="firstname" required
-                       onblur="validate('firstname','firstnamesp','2')"
+                       onkeyup="validate('firstname','firstnamesp','2')"
                        min="2">
                 <span id="firstnamesp"></span>
             </div>
@@ -521,7 +521,7 @@
             <label>Number of Children</label>
             <div>
                 <input type="number" class="form-control" name="num_children" id="numchildren" required min="0"
-                       onblur="validate('num_children','child','0')">
+                       onkeyup="validate('num_children','child','0')">
             </div>
             <span id="child"></span>
             <br>
@@ -529,7 +529,7 @@
             <label>Residential Address</label>
             <div>
                 <input type="text" class="form-control" name="residential_address" id="raddress" required min="6"
-                       onblur="validate('raddress','rad','6')">
+                       onkeyup="validate('raddress','rad','6')">
             </div>
             <span id="rad"></span>
             <br>
@@ -537,7 +537,7 @@
             <label>Mailing Address</label>
             <div>
                 <input type="text" class="form-control" name="mailing_address" id="maddress" required min="6"
-                       onblur="validate('maddress','mad','6')">
+                       onkeyup="validate('maddress','mad','6')">
             </div>
             <span id="mad"></span>
             <br>
@@ -545,7 +545,7 @@
             <label>Telephone(Mobile)</label>
             <div>
                 <input type="tel" class="form-control" name="telephone_mobile" id="telmob" min="10" required
-                       onblur="validate('telmob','tmob','10')">
+                       onkeyup="validate('telmob','tmob','10')">
             </div>
             <span id="tmob"></span>
             <br>
@@ -553,7 +553,7 @@
             <label>Telephone(Official)</label>
             <div>
                 <input type="tel" name="telephone_official" class="form-control" id="teloff" min="10" required
-                       onblur="validate('teloff','toff','10')">
+                       onkeyup="validate('teloff','toff','10')">
             </div>
             <span id="toff"></span>
             <br>
@@ -561,7 +561,7 @@
             <label>Date of Birth</label>
             <div>
                 <input type="date" class="form-control" name="date_of_birth" id="dob" required
-                       onblur="validate('dob','db','7')">
+                       onkeyup="validate('dob','db','7')">
             </div>
             <span id="db"></span>
             <br>
@@ -569,7 +569,7 @@
             <label>Email</label>
             <div>
                 <input type="email" class="form-control" name="email" id="email" required min="6"
-                       onblur="validate('email','em','6')">
+                       onkeyup="validate('email','em','6')">
             </div>
             <span id="em"></span>
             <br>
@@ -577,7 +577,7 @@
             <label>Occupation</label>
             <div>
                 <input type="text" class="form-control" name="occupation" id="occupation" required min="5"
-                       onblur="validate('occupation','occup','5')">
+                       onkeyup="validate('occupation','occup','5')">
             </div>
             <span id="occup"></span>
             <br>
@@ -585,7 +585,7 @@
             <label>Position Held</label>
             <div>
                 <input type="text" class="form-control" name="position" id="position" required
-                       min="5" onblur="validate('position','pos','5')">
+                       min="5" onkeyup="validate('position','pos','5')">
             </div>
             <span id="pos"></span>
             <br>
@@ -593,7 +593,7 @@
             <label>Nationality</label>
             <div>
                 <input type="text" class="form-control" name="nationality" id="nationality" required
-                       min="5" onblur="validate('nationality','nation','5')">
+                       min="5" onkeyup="validate('nationality','nation','5')">
             </div>
             <span id="nation"></span>
             <br>
@@ -601,7 +601,7 @@
             <label>Number of Years in Current Employment</label>
             <div>
                 <input type="number" class="form-control" name="numyears" id="numyears" required
-                       min="1" onblur="validate('numyears','nyears','1')">
+                       min="1" onkeyup="validate('numyears','nyears','1')">
             </div>
             <span id="nyears"></span>
             <br>
@@ -609,7 +609,7 @@
             <label>Employer Name</label>
             <div>
                 <input type="text" class="form-control" name="employer_name" id="empname" required
-                       min="5" onblur="validate('empname','ename','5')">
+                       min="5" onkeyup="validate('empname','ename','5')">
             </div>
             <span id="ename"></span>
             <br>
@@ -617,7 +617,7 @@
             <label>Employer Address</label>
             <div>
                 <input type="text" class="form-control" name="employer_address" id="empaddress" required
-                       min="5" onblur="validate('empaddress','eadd','5')">
+                       min="5" onkeyup="validate('empaddress','eadd','5')">
             </div>
             <span id="eadd"></span>
             <br>
@@ -661,7 +661,7 @@
             <label>ID Number</label>
             <div>
                 <input type="text" class="form-control" name="identification_number" id="idnum" required
-                       min="5" onblur="validate('idnum','idn','5')">
+                       min="5" onkeyup="validate('idnum','idn','5')">
             </div>
             <span id="idn"></span>
             <br>
@@ -669,7 +669,7 @@
             <label>Date of Issue</label>
             <div>
                 <input type="date" class="form-control" name="issuedate" id="issuedate" required
-                       onblur="validate('issuedate','idate','7')">
+                       onkeyup="validate('issuedate','idate','7')">
             </div>
             <span id="idate"></span>
             <br>
@@ -677,7 +677,7 @@
             <label>Expiry Date</label>
             <div>
                 <input type="date" class="form-control" name="expirydate" id="expirydate" required
-                       onblur="validate('expirydate','exp','7')">
+                       onkeyup="validate('expirydate','exp','7')">
             </div>
             <span id="exp"></span>
             <br>
@@ -696,7 +696,7 @@
             <label>Hometown</label>
             <div>
                 <input type="text" class="form-control" name="hometown" id="hometown" required
-                       min="5" onblur="validate('hometown','h','5')">
+                       min="5" onkeyup="validate('hometown','h','5')">
             </div>
             <span id="h"></span>
             <br>
@@ -704,7 +704,7 @@
             <label>Social Security Number</label>
             <div>
                 <input type="text" class="form-control" name="social_security" id="scnumber" required
-                       min="5" onblur="validate('scnumber','soc','5')">
+                       min="5" onkeyup="validate('scnumber','soc','5')">
             </div>
             <span id="soc"></span>
             <br>
@@ -712,7 +712,7 @@
             <label>Number of Member in Household</label>
             <div>
                 <input type="number" class="form-control" name="numhousehold" id="numhousehold" required
-                       min="1" onblur="validate('numhousehold','nh','1')">
+                       min="1" onkeyup="validate('numhousehold','nh','1')">
             </div>
             <span id="nh"></span>
             <br>
@@ -720,7 +720,7 @@
             <label>Number of Dependants</label>
             <div>
                 <input type="number" class="form-control" name="numdependants" id="numdependants" required
-                       min="1" onblur="validate('numdependants','nd','1')">
+                       min="1" onkeyup="validate('numdependants','nd','1')">
             </div>
             <span id="nd"></span>
             <br>
@@ -728,7 +728,7 @@
             <label>Father's Name</label>
             <div>
                 <input type="text" class="form-control" name="father" id="father" required min="2"
-                       onblur="validate('father','fa','2')">
+                       onkeyup="validate('father','fa','2')">
             </div>
             <span id="fa"></span>
             <br>
@@ -736,7 +736,7 @@
             <label>Mother's Name</label>
             <div>
                 <input type="text" class="form-control" name="mother" id="mother" required
-                       min="2" onblur="validate('mother','mo','2')">
+                       min="2" onkeyup="validate('mother','mo','2')">
             </div>
             <span id="mo"></span>
             <br>
@@ -744,7 +744,7 @@
             <label>Next of Kin's Name</label>
             <div>
                 <input type="text" class="form-control" name="kname" id="kname" required
-                       min="2" onblur="validate('kname','kn','2')">
+                       min="2" onkeyup="validate('kname','kn','2')">
             </div>
             <span id="kn"></span>
             <br>
@@ -752,7 +752,7 @@
             <label>Next of Kin's Address</label>
             <div>
                 <input type="text" class="form-control" name="kaddress" id="kaddress" required
-                       min="5" onblur="validate('kaddress','ka','5')">
+                       min="5" onkeyup="validate('kaddress','ka','5')">
             </div>
             <span id="ka"></span>
             <br>
@@ -760,7 +760,7 @@
             <label>Next of Kin's Mobile Number</label>
             <div>
                 <input type="tel" class="form-control" name="ktel" id="ktel" min="10" required
-                       min="10" onblur="validate('ktel','kt','10')">
+                       min="10" onkeyup="validate('ktel','kt','10')">
             </div>
             <span id="kt"></span>
             <br>
@@ -768,7 +768,7 @@
             <label>Relationship to Kin's Name</label>
             <div>
                 <input type="text" class="form-control" name="krel" id="krel" required
-                       min="3" onblur="validate('krel','kr','3')">
+                       min="3" onkeyup="validate('krel','kr','3')">
             </div>
             <span id="kr"></span>
             <br>
@@ -782,7 +782,7 @@
             <label>Password</label>
             <div>
                 <input type="password" class="form-control" name="password" id="password" required min="6"
-                       onblur="validate('password','pass','6')">
+                       onkeyup="validate('password','pass','6')">
             </div>
             <span id="pass"></span>
             <br>
@@ -790,7 +790,7 @@
             <label>Confirm Password</label>
             <div>
                 <input type="password" class="form-control" name="cpassword" id="cpassword" required min="6"
-                       onblur="validate('cpassword')">
+                       onkeyup="validate('cpassword')">
             </div>
             <br>
 
@@ -812,7 +812,7 @@
             <label>Upload Picture</label>
             <div>
                 <input type="file" class="form-control" name="pic" id="pic" required
-                       onblur="validate('pic')" onchange="readURL(this)">
+                       onkeyup="validate('pic')" onchange="readURL(this)">
             </div>
             <br>
             <br>
@@ -844,6 +844,18 @@
                 class="zmdi zmdi zmdi-arrow-back"></i></a>
     </div>
 
+    <div data-role="popup" id="loanpopup" class="ui-content" style="background-color: white; border: none">
+        <h3>Your loan application was successful.</h3>
+    </div>
+
+    <div data-role="popup" id="loanpopup1" class="ui-content" style="background-color: white; border: none">
+        <h3>You must agree with the terms and conditions.</h3>
+    </div>
+
+    <div data-role="popup" id="loanpopup2" class="ui-content" style="background-color: white; border: none">
+        <h3>Please fill all required fields.</h3>
+    </div>
+
     <div data-role="content">
         <form id="loanform">
 
@@ -852,7 +864,7 @@
             <label class="myfont">Net Monthly Salary/Sales (GHS)</label>
             <div>
                 <input type="number" class="form-control" name="num_monthly" id="net_monthly" required
-                       onblur="validate('num_monthly','nm','1')">
+                       onkeyup="validate('num_monthly','nm','1')">
             </div>
             <span id="nm"></span>
             <br>
@@ -860,7 +872,7 @@
             <label class="myfont">Any Other Source of Income</label>
             <div>
                 <input type="text" class="form-control" name="other_source" id="other_source"
-                       onblur="validate('other_source','os','2')">
+                       onkeyup="validate('other_source','os','2')">
             </div>
             <span id="os"></span>
             <br>
@@ -868,7 +880,7 @@
             <label class="myfont">Bank/Branch</label>
             <div>
                 <input type="text" class="form-control" name="bank" id="bank" required
-                       onblur="validate('bank','b','2')">
+                       onkeyup="validate('bank','b','2')">
             </div>
             <span id="b"></span>
             <br>
@@ -876,7 +888,7 @@
             <label class="myfont">Salary Date</label>
             <div>
                 <input type="date" class="form-control" name="salary_date" id="salary_date" required
-                       onblur="validate('salary_date','sd','7')">
+                       onkeyup="validate('salary_date','sd','7')">
             </div>
             <span id="sd"></span>
             <br>
@@ -889,7 +901,7 @@
             <label class="myfont">Number of Current Loans</label>
             <div>
                 <input type="number" class="form-control" name="numloans" id="numloans" required
-                       onblur="validate('numloans','nl','0')">
+                       onkeyup="validate('numloans','nl','0')">
             </div>
             <span id="nl"></span>
             <br>
@@ -899,7 +911,7 @@
                 <input type="number" class="form-control" name="total_monthly_payments"
                        id="total_monthly_payments"
                        required
-                       onblur="validate('total_monthly_payments','tmp','0')">
+                       onkeyup="validate('total_monthly_payments','tmp','0')">
             </div>
             <span id="tmp"></span>
             <br>
@@ -907,7 +919,7 @@
             <label class="myfont">Name of Institution(s)</label>
             <div>
                 <input type="text" class="form-control" name="name_insti" id="name_insti" required
-                       onblur="validate('name_insti','ni','2')">
+                       onkeyup="validate('name_insti','ni','2')">
             </div>
             <span id="ni"></span>
             <br>
@@ -918,7 +930,7 @@
             <label class="myfont">Amount Requested</label>
             <div>
                 <input type="number" class="form-control" name="amount" id="amount" required
-                       onblur="validate('amount','a','1')">
+                       onkeyup="validate('amount','a','1')">
             </div>
             <span id="a"></span>
             <br>
@@ -926,23 +938,23 @@
             <label class="myfont">Proposed Loan Period</label>
             <div>
                 <input type="number" class="form-control" name="loan_period" id="loan_period" required
-                       onblur="validate('loan_period','lp','1')">
+                       onkeyup="validate('loan_period','lp','1')">
             </div>
             <span id="lp"></span>
             <br>
 
             <label class="myfont">Purpose of Loan</label>
             <div>
-                        <textarea class="form-control" name="purpose" id="purpose" rows="3" required
-                                  onblur="validate('purpose','p','5')"></textarea>
+                <input class="form-control" name="purpose" id="purpose" required
+                       onkeyup="validate('purpose','p','5')">
             </div>
             <span id="p"></span>
             <br>
 
             <label class="myfont">Collateral Details</label>
             <div>
-                        <textarea class="form-control" name="collateral" id="collateral" rows="3" required
-                                  onblur="validate('collateral','c','5')"></textarea>
+                <input class="form-control" name="collateral" id="collateral" required
+                       onkeyup="validate('collateral','c','5')">
             </div>
             <span id="c"></span>
             <br>
@@ -962,7 +974,7 @@
             <label class="myfont">Witness' Name</label>
             <div>
                 <input type="text" class="form-control" name="wname" id="wname" required
-                       onblur="validate('wname','wn','2')">
+                       onkeyup="validate('wname','wn','2')">
             </div>
             <span id="wn"></span>
             <br>
@@ -970,7 +982,7 @@
             <label class="myfont">Witness' Employer</label>
             <div>
                 <input type="text" class="form-control" name="wemployer" id="wemployer" required
-                       onblur="validate('wemployer','we','2')">
+                       onkeyup="validate('wemployer','we','2')">
             </div>
             <span id="we"></span>
             <br>
@@ -978,7 +990,7 @@
             <label class="myfont">Witness' Telephone Number</label>
             <div>
                 <input type="tel" class="form-control" name="wtel" id="wtel" required
-                       onblur="validate('wtel','wt','10')">
+                       onkeyup="validate('wtel','wt','10')">
             </div>
             <span id="wt"></span>
             <br>
@@ -1009,13 +1021,13 @@
 
             <br>
 
-            <select name="agree" class="form-control">
+            <select name="agree" class="form-control" id="ag">
                 <option value="1">Agree</option>
                 <option value="2">I Do Not Agree</option>
             </select>
             <br>
 
-            <button type="" onclick="create_loan()" class="btn btn-primary"
+            <button type="" onclick="create_loan(event)" class="btn btn-primary" id="addloanbutton"
                     style="background-color: #8A5241; border: none; color: #fff">
                 Submit
             </button>
