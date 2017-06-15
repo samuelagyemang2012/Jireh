@@ -274,29 +274,37 @@ $("#pic").change(function () {
 });
 
 
-function validate(name, id, min) {
+function validate(name, id, min, button) {
     var input = $("#" + name);
 
+
     var data = input.val();
-    var span = $("#" + id);
 
-    var m = parseInt(min);
+    if (data != null) {
 
-    if (data.length < min) {
-        input.css('border', '1px solid red');
-        span.html("<b style='color: crimson'>Minimum: " + m + "</b>");
-        hideButton("true");
-    } else {
-        input.css('border', '1px solid #5FFC3F');
-        span.html('<b></b>');
-        hideButton("false");
+        var trimdata = data.trim();
+        var span = $("#" + id);
+
+        var m = parseInt(min);
+
+        if (trimdata.length < min) {
+            input.css('border', '1px solid red');
+            span.html("<b style='color: crimson'>Minimum: " + m + "</b>");
+
+            hideButton("true", button);
+        } else {
+            input.css('border', '1px solid #5FFC3F');
+            span.html('<b></b>');
+            hideButton("false", button);
+        }
+
     }
 }
 
-function hideButton(status) {
+function hideButton(status, button) {
     if (status === "true") {
-        $("#addloanbutton").hide();
+        $("#" + button).hide();
     } else {
-        $("#addloanbutton").show();
+        $("#" + button).show();
     }
 }

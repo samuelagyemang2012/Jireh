@@ -75,12 +75,12 @@
         <!---->
         <div>
             <input type="text" id="username" placeholder="Username" style="color: #4CAF50; text-align: center"
-                   required>
+            >
         </div>
         <!---->
         <div>
             <input type="password" id="lpassword" placeholder="Password" style="color: #4CAF50; text-align: center"
-                   required>
+            >
         </div>
         <br>
         <!---->
@@ -207,7 +207,7 @@
 
         <label style="font-size: 14px">Other Names</label>
         <div>
-            <input type="text" id="eoname" required style="text-align: center">
+            <input type="text" id="eoname" style="text-align: center">
         </div>
 
         <label style="font-size: 14px">Name of Spouse</label>
@@ -415,10 +415,11 @@
 
 <!--Signup page-->
 <div data-role="page" id="createmyloanpage">
+
     <div data-role="header" style="background-color: #8A5241">
         <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
 
-        <a href="#loginpage" d class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse"><i
+        <a href="#loginpage"  class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse"><i
                 class="zmdi zmdi zmdi-arrow-back"></i></a>
     </div>
 
@@ -427,7 +428,7 @@
     </div>
 
     <div data-role="popup" id="failpopup" class="ui-content" style="background-color: white; border: none">
-        <h4 style="color: crimson">Sorry. This user already exists !</h4>
+        <h4 style="color: crimson">Sign-up failed</h4>
     </div>
 
     <div data-role="popup" id="sfailpopup" class="ui-content" style="background-color: white; border: none">
@@ -439,15 +440,19 @@
     </div>
 
     <div data-role="popup" id="sfailpopup3" class="ui-content" style="background-color: white; border: none">
-        <h4 style="color: crimson">Invalid telephone number !</h4>
+        <h4 style="color: crimson">You must agree with the terms and conditions.</h4>
     </div>
 
-    <div data-role="popup" id="sfailpopup4" class="ui-content" style="background-color: white; border: none">
-        <h4 style="color: crimson">Your password should be at least 8 characters long !</h4>
-    </div>
+    <!--<div data-role="popup" id="sfailpopup3" class="ui-content" style="background-color: white; border: none">-->
+        <!--<h4 style="color: crimson">Invalid telephone number !</h4>-->
+    <!--</div>-->
+
+    <!--<div data-role="popup" id="sfailpopup4" class="ui-content" style="background-color: white; border: none">-->
+        <!--<h4 style="color: crimson">Your password should be at least 8 characters long !</h4>-->
+    <!--</div>-->
 
     <div data-role="content">
-        <form enctype="multipart/form-data">
+        <form enctype="multipart/form-data" id="signupform">
             <div>
                 <label>Title</label>
                 <select name="title" id="title" class="form-control">
@@ -470,16 +475,16 @@
 
             <label>Surname</label>
             <div>
-                <input type="text" class="form-control" name="surname" id="surname" required
-                       onkeyup="validate('surname','surnamesp','2')" min="2">
+                <input type="text" class="form-control" name="surname" id="surname"
+                       onkeyup="validate('surname','surnamesp','2','addclient')" min="2">
                 <span id="surnamesp"></span>
             </div>
             <br>
 
             <label>Firstname</label>
             <div>
-                <input type="text" class="form-control" name="firstname" id="firstname" required
-                       onkeyup="validate('firstname','firstnamesp','2')"
+                <input type="text" class="form-control" name="firstname" id="firstname"
+                       onkeyup="validate('firstname','firstnamesp','2','addclient')"
                        min="2">
                 <span id="firstnamesp"></span>
             </div>
@@ -520,104 +525,104 @@
 
             <label>Number of Children</label>
             <div>
-                <input type="number" class="form-control" name="num_children" id="numchildren" required min="0"
-                       onkeyup="validate('num_children','child','0')">
+                <input type="number" class="form-control" name="num_children" id="numchildren" min="0"
+                       onkeyup="validate('num_children','child','0','addclient')">
             </div>
             <span id="child"></span>
             <br>
 
             <label>Residential Address</label>
             <div>
-                <input type="text" class="form-control" name="residential_address" id="raddress" required min="6"
-                       onkeyup="validate('raddress','rad','6')">
+                <input type="text" class="form-control" name="residential_address" id="raddress" min="6"
+                       onkeyup="validate('raddress','rad','6','addclient')">
             </div>
             <span id="rad"></span>
             <br>
 
             <label>Mailing Address</label>
             <div>
-                <input type="text" class="form-control" name="mailing_address" id="maddress" required min="6"
-                       onkeyup="validate('maddress','mad','6')">
+                <input type="text" class="form-control" name="mailing_address" id="maddress" min="6"
+                       onkeyup="validate('maddress','mad','6','addclient')">
             </div>
             <span id="mad"></span>
             <br>
 
             <label>Telephone(Mobile)</label>
             <div>
-                <input type="tel" class="form-control" name="telephone_mobile" id="telmob" min="10" required
-                       onkeyup="validate('telmob','tmob','10')">
+                <input type="tel" class="form-control" name="telephone_mobile" id="telmob" min="10"
+                       onkeyup="validate('telmob','tmob','10','addclient')">
             </div>
             <span id="tmob"></span>
             <br>
 
             <label>Telephone(Official)</label>
             <div>
-                <input type="tel" name="telephone_official" class="form-control" id="teloff" min="10" required
-                       onkeyup="validate('teloff','toff','10')">
+                <input type="tel" name="telephone_official" class="form-control" id="teloff" min="10"
+                       onkeyup="validate('teloff','toff','10','addclient')">
             </div>
             <span id="toff"></span>
             <br>
 
             <label>Date of Birth</label>
             <div>
-                <input type="date" class="form-control" name="date_of_birth" id="dob" required
-                       onkeyup="validate('dob','db','7')">
+                <input type="date" class="form-control" name="date_of_birth" id="dob"
+                       onkeyup="validate('dob','db','7','addclient')">
             </div>
             <span id="db"></span>
             <br>
 
             <label>Email</label>
             <div>
-                <input type="email" class="form-control" name="email" id="email" required min="6"
-                       onkeyup="validate('email','em','6')">
+                <input type="email" class="form-control" name="email" id="email" min="6"
+                       onkeyup="validate('email','em','6','addclient')">
             </div>
             <span id="em"></span>
             <br>
 
             <label>Occupation</label>
             <div>
-                <input type="text" class="form-control" name="occupation" id="occupation" required min="5"
-                       onkeyup="validate('occupation','occup','5')">
+                <input type="text" class="form-control" name="occupation" id="occupation" min="5"
+                       onkeyup="validate('occupation','occup','5','addclient')">
             </div>
             <span id="occup"></span>
             <br>
 
             <label>Position Held</label>
             <div>
-                <input type="text" class="form-control" name="position" id="position" required
-                       min="5" onkeyup="validate('position','pos','5')">
+                <input type="text" class="form-control" name="position" id="position"
+                       min="5" onkeyup="validate('position','pos','5','addclient')">
             </div>
             <span id="pos"></span>
             <br>
 
             <label>Nationality</label>
             <div>
-                <input type="text" class="form-control" name="nationality" id="nationality" required
-                       min="5" onkeyup="validate('nationality','nation','5')">
+                <input type="text" class="form-control" name="nationality" id="nationality"
+                       min="5" onkeyup="validate('nationality','nation','5','addclient')">
             </div>
             <span id="nation"></span>
             <br>
 
             <label>Number of Years in Current Employment</label>
             <div>
-                <input type="number" class="form-control" name="numyears" id="numyears" required
-                       min="1" onkeyup="validate('numyears','nyears','1')">
+                <input type="number" class="form-control" name="numyears" id="numyears"
+                       min="1" onkeyup="validate('numyears','nyears','1','addclient')">
             </div>
             <span id="nyears"></span>
             <br>
 
             <label>Employer Name</label>
             <div>
-                <input type="text" class="form-control" name="employer_name" id="empname" required
-                       min="5" onkeyup="validate('empname','ename','5')">
+                <input type="text" class="form-control" name="employer_name" id="empname"
+                       min="5" onkeyup="validate('empname','ename','5','addclient')">
             </div>
             <span id="ename"></span>
             <br>
 
             <label>Employer Address</label>
             <div>
-                <input type="text" class="form-control" name="employer_address" id="empaddress" required
-                       min="5" onkeyup="validate('empaddress','eadd','5')">
+                <input type="text" class="form-control" name="employer_address" id="empaddress"
+                       min="5" onkeyup="validate('empaddress','eadd','5','addclient')">
             </div>
             <span id="eadd"></span>
             <br>
@@ -660,24 +665,24 @@
 
             <label>ID Number</label>
             <div>
-                <input type="text" class="form-control" name="identification_number" id="idnum" required
-                       min="5" onkeyup="validate('idnum','idn','5')">
+                <input type="text" class="form-control" name="identification_number" id="idnum"
+                       min="5" onkeyup="validate('idnum','idn','5','addclient')">
             </div>
             <span id="idn"></span>
             <br>
 
             <label>Date of Issue</label>
             <div>
-                <input type="date" class="form-control" name="issuedate" id="issuedate" required
-                       onkeyup="validate('issuedate','idate','7')">
+                <input type="date" class="form-control" name="issuedate" id="issuedate"
+                       onkeyup="validate('issuedate','idate','7','addclient')">
             </div>
             <span id="idate"></span>
             <br>
 
             <label>Expiry Date</label>
             <div>
-                <input type="date" class="form-control" name="expirydate" id="expirydate" required
-                       onkeyup="validate('expirydate','exp','7')">
+                <input type="date" class="form-control" name="expirydate" id="expirydate"
+                       onkeyup="validate('expirydate','exp','7','addclient')">
             </div>
             <span id="exp"></span>
             <br>
@@ -695,102 +700,102 @@
 
             <label>Hometown</label>
             <div>
-                <input type="text" class="form-control" name="hometown" id="hometown" required
-                       min="5" onkeyup="validate('hometown','h','5')">
+                <input type="text" class="form-control" name="hometown" id="hometown"
+                       min="5" onkeyup="validate('hometown','h','5','addclient')">
             </div>
             <span id="h"></span>
             <br>
 
             <label>Social Security Number</label>
             <div>
-                <input type="text" class="form-control" name="social_security" id="scnumber" required
-                       min="5" onkeyup="validate('scnumber','soc','5')">
+                <input type="text" class="form-control" name="social_security" id="scnumber"
+                       min="5" onkeyup="validate('scnumber','soc','5','addclient')">
             </div>
             <span id="soc"></span>
             <br>
 
             <label>Number of Member in Household</label>
             <div>
-                <input type="number" class="form-control" name="numhousehold" id="numhousehold" required
-                       min="1" onkeyup="validate('numhousehold','nh','1')">
+                <input type="number" class="form-control" name="numhousehold" id="numhousehold"
+                       min="1" onkeyup="validate('numhousehold','nh','1','addclient')">
             </div>
             <span id="nh"></span>
             <br>
 
             <label>Number of Dependants</label>
             <div>
-                <input type="number" class="form-control" name="numdependants" id="numdependants" required
-                       min="1" onkeyup="validate('numdependants','nd','1')">
+                <input type="number" class="form-control" name="numdependants" id="numdependants"
+                       min="1" onkeyup="validate('numdependants','nd','1','addclient')">
             </div>
             <span id="nd"></span>
             <br>
 
             <label>Father's Name</label>
             <div>
-                <input type="text" class="form-control" name="father" id="father" required min="2"
-                       onkeyup="validate('father','fa','2')">
+                <input type="text" class="form-control" name="father" id="father" min="2"
+                       onkeyup="validate('father','fa','2','addclient')">
             </div>
             <span id="fa"></span>
             <br>
 
             <label>Mother's Name</label>
             <div>
-                <input type="text" class="form-control" name="mother" id="mother" required
-                       min="2" onkeyup="validate('mother','mo','2')">
+                <input type="text" class="form-control" name="mother" id="mother"
+                       min="2" onkeyup="validate('mother','mo','2','addclient')">
             </div>
             <span id="mo"></span>
             <br>
 
             <label>Next of Kin's Name</label>
             <div>
-                <input type="text" class="form-control" name="kname" id="kname" required
-                       min="2" onkeyup="validate('kname','kn','2')">
+                <input type="text" class="form-control" name="kname" id="kname"
+                       min="2" onkeyup="validate('kname','kn','2','addclient')">
             </div>
             <span id="kn"></span>
             <br>
 
             <label>Next of Kin's Address</label>
             <div>
-                <input type="text" class="form-control" name="kaddress" id="kaddress" required
-                       min="5" onkeyup="validate('kaddress','ka','5')">
+                <input type="text" class="form-control" name="kaddress" id="kaddress"
+                       min="5" onkeyup="validate('kaddress','ka','5','addclient')">
             </div>
             <span id="ka"></span>
             <br>
 
             <label>Next of Kin's Mobile Number</label>
             <div>
-                <input type="tel" class="form-control" name="ktel" id="ktel" min="10" required
-                       min="10" onkeyup="validate('ktel','kt','10')">
+                <input type="tel" class="form-control" name="ktel" id="ktel" min="10"
+                       min="10" onkeyup="validate('ktel','kt','10','addclient')">
             </div>
             <span id="kt"></span>
             <br>
 
             <label>Relationship to Kin's Name</label>
             <div>
-                <input type="text" class="form-control" name="krel" id="krel" required
-                       min="3" onkeyup="validate('krel','kr','3')">
+                <input type="text" class="form-control" name="krel" id="krel"
+                       min="3" onkeyup="validate('krel','kr','3','addclient')">
             </div>
             <span id="kr"></span>
             <br>
 
             <!--{{&#45;&#45;<label>Username</label>&#45;&#45;}}-->
             <!--{{&#45;&#45;<div>&#45;&#45;}}-->
-            <!--{{&#45;&#45;<input type="text" class="form-control" name="username" id="username" required>&#45;&#45;}}-->
+            <!--{{&#45;&#45;<input type="text" class="form-control" name="username" id="username" >&#45;&#45;}}-->
             <!--{{&#45;&#45;</div>&#45;&#45;}}-->
             <!--{{&#45;&#45;<br>&#45;&#45;}}-->
 
             <label>Password</label>
             <div>
-                <input type="password" class="form-control" name="password" id="password" required min="6"
-                       onkeyup="validate('password','pass','6')">
+                <input type="password" class="form-control" name="password" id="password" min="6"
+                       onkeyup="validate('password','pass','6','addclient')">
             </div>
             <span id="pass"></span>
             <br>
 
             <label>Confirm Password</label>
             <div>
-                <input type="password" class="form-control" name="cpassword" id="cpassword" required min="6"
-                       onkeyup="validate('cpassword')">
+                <input type="password" class="form-control" name="cpassword" id="cpassword" min="6"
+                       onkeyup="">
             </div>
             <br>
 
@@ -811,7 +816,7 @@
             <br>
             <label>Upload Picture</label>
             <div>
-                <input type="file" class="form-control" name="pic" id="pic" required
+                <input type="file" class="form-control" name="pic" id="pic"
                        onkeyup="validate('pic')" onchange="readURL(this)">
             </div>
             <br>
@@ -826,7 +831,7 @@
             <br>
 
             <div>
-                <button type="" onclick="add_client()" class="btn btn-primary"
+                <button type="" onclick="add_client(event)" class="btn btn-primary" id="addclient"
                         style="background-color: #8A5241; color: #fff">SUBMIT
                 </button>
             </div>
@@ -853,7 +858,7 @@
     </div>
 
     <div data-role="popup" id="loanpopup2" class="ui-content" style="background-color: white; border: none">
-        <h3>Please fill all required fields.</h3>
+        <h3>Please fill all fields.</h3>
     </div>
 
     <div data-role="content">
@@ -863,8 +868,8 @@
 
             <label class="myfont">Net Monthly Salary/Sales (GHS)</label>
             <div>
-                <input type="number" class="form-control" name="num_monthly" id="net_monthly" required
-                       onkeyup="validate('num_monthly','nm','1')">
+                <input type="number" class="form-control" name="num_monthly" id="net_monthly"
+                       onkeyup="validate('num_monthly','nm','1','addloanbutton')">
             </div>
             <span id="nm"></span>
             <br>
@@ -872,23 +877,23 @@
             <label class="myfont">Any Other Source of Income</label>
             <div>
                 <input type="text" class="form-control" name="other_source" id="other_source"
-                       onkeyup="validate('other_source','os','2')">
+                       onkeyup="validate('other_source','os','2','addloanbutton')">
             </div>
             <span id="os"></span>
             <br>
 
             <label class="myfont">Bank/Branch</label>
             <div>
-                <input type="text" class="form-control" name="bank" id="bank" required
-                       onkeyup="validate('bank','b','2')">
+                <input type="text" class="form-control" name="bank" id="bank"
+                       onkeyup="validate('bank','b','2','addloanbutton')">
             </div>
             <span id="b"></span>
             <br>
 
             <label class="myfont">Salary Date</label>
             <div>
-                <input type="date" class="form-control" name="salary_date" id="salary_date" required
-                       onkeyup="validate('salary_date','sd','7')">
+                <input type="date" class="form-control" name="salary_date" id="salary_date"
+                       onkeyup="validate('salary_date','sd','7','addloanbutton')">
             </div>
             <span id="sd"></span>
             <br>
@@ -900,8 +905,8 @@
 
             <label class="myfont">Number of Current Loans</label>
             <div>
-                <input type="number" class="form-control" name="numloans" id="numloans" required
-                       onkeyup="validate('numloans','nl','0')">
+                <input type="number" class="form-control" name="numloans" id="numloans"
+                       onkeyup="validate('numloans','nl','0','addloanbutton')">
             </div>
             <span id="nl"></span>
             <br>
@@ -910,16 +915,16 @@
             <div>
                 <input type="number" class="form-control" name="total_monthly_payments"
                        id="total_monthly_payments"
-                       required
-                       onkeyup="validate('total_monthly_payments','tmp','0')">
+
+                       onkeyup="validate('total_monthly_payments','tmp','0','addloanbutton')">
             </div>
             <span id="tmp"></span>
             <br>
 
             <label class="myfont">Name of Institution(s)</label>
             <div>
-                <input type="text" class="form-control" name="name_insti" id="name_insti" required
-                       onkeyup="validate('name_insti','ni','2')">
+                <input type="text" class="form-control" name="name_insti" id="name_insti"
+                       onkeyup="validate('name_insti','ni','2','addloanbutton')">
             </div>
             <span id="ni"></span>
             <br>
@@ -929,32 +934,32 @@
 
             <label class="myfont">Amount Requested</label>
             <div>
-                <input type="number" class="form-control" name="amount" id="amount" required
-                       onkeyup="validate('amount','a','1')">
+                <input type="number" class="form-control" name="amount" id="amount"
+                       onkeyup="validate('amount','a','1','addloanbutton')">
             </div>
             <span id="a"></span>
             <br>
 
             <label class="myfont">Proposed Loan Period</label>
             <div>
-                <input type="number" class="form-control" name="loan_period" id="loan_period" required
-                       onkeyup="validate('loan_period','lp','1')">
+                <input type="number" class="form-control" name="loan_period" id="loan_period"
+                       onkeyup="validate('loan_period','lp','1','addloanbutton')">
             </div>
             <span id="lp"></span>
             <br>
 
             <label class="myfont">Purpose of Loan</label>
             <div>
-                <input class="form-control" name="purpose" id="purpose" required
-                       onkeyup="validate('purpose','p','5')">
+                <input class="form-control" name="purpose" id="purpose"
+                       onkeyup="validate('purpose','p','5','addloanbutton')">
             </div>
             <span id="p"></span>
             <br>
 
             <label class="myfont">Collateral Details</label>
             <div>
-                <input class="form-control" name="collateral" id="collateral" required
-                       onkeyup="validate('collateral','c','5')">
+                <input class="form-control" name="collateral" id="collateral"
+                       onkeyup="validate('collateral','c','5','addloanbutton')">
             </div>
             <span id="c"></span>
             <br>
@@ -973,24 +978,24 @@
 
             <label class="myfont">Witness' Name</label>
             <div>
-                <input type="text" class="form-control" name="wname" id="wname" required
-                       onkeyup="validate('wname','wn','2')">
+                <input type="text" class="form-control" name="wname" id="wname"
+                       onkeyup="validate('wname','wn','2','addloanbutton')">
             </div>
             <span id="wn"></span>
             <br>
 
             <label class="myfont">Witness' Employer</label>
             <div>
-                <input type="text" class="form-control" name="wemployer" id="wemployer" required
-                       onkeyup="validate('wemployer','we','2')">
+                <input type="text" class="form-control" name="wemployer" id="wemployer"
+                       onkeyup="validate('wemployer','we','2','addloanbutton')">
             </div>
             <span id="we"></span>
             <br>
 
             <label class="myfont">Witness' Telephone Number</label>
             <div>
-                <input type="tel" class="form-control" name="wtel" id="wtel" required
-                       onkeyup="validate('wtel','wt','10')">
+                <input type="tel" class="form-control" name="wtel" id="wtel"
+                       onkeyup="validate('wtel','wt','10','addloanbutton')">
             </div>
             <span id="wt"></span>
             <br>

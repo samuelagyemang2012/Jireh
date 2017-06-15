@@ -26,6 +26,10 @@ function login() {
     username = $("#username").val();
     password = $("#lpassword").val();
 
+    if (username.length == 0 && password.length == 0) {
+        popout('loginfailpopup2', 'slide');
+    }
+
     $.get("http://5.9.86.210:19111/api/login/" + username + "/" + password,
 
         function (response) {
@@ -43,23 +47,65 @@ function login() {
         });
 }
 
-function add_client() {
+function add_client(e) {
 
-    var datastring = $("form").serialize();
+    e.preventDefault();
 
-    $.ajax({
-        type: "GET",
-        url: "http://5.9.86.210:19111/api/add-client",
-        data: datastring,
-        dataType: "json",
+    var is_empty = is_form_empty('signupform');
 
-        success: function (data) {
-            alert(data.msg);
-        },
-        error: function () {
-            change_page('loginpage#', "");
-        }
-    });
+    //alert(is_empty);
+
+    var password = $("#password").val();
+    var cpassword = $("#cpassword").val();
+
+    var agree = $("#agree").val();
+
+    if (is_empty == true) {
+        popout('sfailpopup2', 'slide');
+        return;
+    }
+
+    if (password.localeCompare(cpassword) != 0) {
+        popout('sfailpopup', 'slide');
+    }
+
+    if (agree == 2) {
+        popout('sfailpopup3', 'slide');
+    }
+
+    if (is_empty == false && agree == 1) {
+
+        var datastring = $("#signupform").serialize();
+
+        //alert("adsdas");
+
+        $.ajax({
+            type: 'get',
+            url: 'http://5.9.86.210:19111/api/add-client?',
+            data: datastring,
+
+            success: function (results) {
+                if (results.code == 0) {
+                    //alert('ack');
+                    popout('successpopup', 'slide');
+
+                    setTimeout(
+                        function () {
+                            change_page("#loginpage", "slide");
+                        }, 800);
+                    //change_page('#loginpage', 'slide');
+                }
+            },
+
+            error: function (results) {
+                if (results.code == 9) {
+                    //alert('ack');
+                    popout('failpopup', 'slide');
+                    change_page('#loginpage', 'slide');
+                }
+            }
+        });
+    }
 }
 
 function create_loan(e) {
@@ -68,7 +114,7 @@ function create_loan(e) {
 
     $("#client_email").val($.cookie('email'));
 
-    is_form_empty();
+    var is_empty = is_form_empty('loanform');
 
     var agree = $("#ag").val();
 
@@ -77,12 +123,11 @@ function create_loan(e) {
     }
 
     if (agree == 2) {
-        popout('loanpopup1', slide)
+        popout('loanpopup1', 'slide');
     }
 
 
     if (is_empty == false && agree == 1) {
-
 
         e.preventDefault();
         //
@@ -121,9 +166,9 @@ function create_loan(e) {
     }
 }
 
-function is_form_empty() {
+function is_form_empty(form) {
 
-    var form = document.getElementById('loanform');
+    var form = document.getElementById(form);
     // get all the inputs within the submitted form
     var inputs = form.getElementsByTagName('input');
 
@@ -131,15 +176,13 @@ function is_form_empty() {
         // only validate the inputs that have the required attribute
 
         if (inputs[i].value == "") {
-            is_empty = true;
+            return true;
             //alert(inputs[i].name);
             break;
         } else {
-            is_empty = false;
+            return false;
         }
     }
-
-    //is_empty = false;
 }
 
 function get_loans(email) {
@@ -147,8 +190,6 @@ function get_loans(email) {
     var build;
 
     build = "";
-
-    //alert("dsa");
 
     $.get("http://5.9.86.210:19111/api/getloans/" + email,
 
@@ -183,8 +224,9 @@ function get_loans(email) {
 
                 change_page('#myloanpage', '');
             }
-
         });
 }
+
+
 
 
