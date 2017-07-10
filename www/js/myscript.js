@@ -30,7 +30,7 @@ function login() {
         popout('loginfailpopup2', 'slide');
     }
 
-    $.get("http://5.9.86.210:19111/api/login/" + username + "/" + password,
+    $.post("http://5.9.86.210:19111/api/login/" + username + "/" + password,
 
         function (response) {
 
@@ -43,7 +43,6 @@ function login() {
             } else {
                 popout('loginfailpopup', 'slide');
             }
-
         });
 }
 
@@ -61,6 +60,7 @@ function add_client(e) {
     var agree = $("#agree").val();
 
     if (is_empty == true) {
+        //alert('null field');
         popout('sfailpopup2', 'slide');
         return;
     }
@@ -75,31 +75,31 @@ function add_client(e) {
 
     if (is_empty == false && agree == 1) {
 
-        var datastring = $("#signupform").serialize();
+        e.preventDefault();
 
-        //alert("adsdas");
+        var form = $('#signupform')[0];
+
+        var formData = new FormData(form);
 
         $.ajax({
-            type: 'get',
-            url: 'http://5.9.86.210:19111/api/add-client?',
-            data: datastring,
+            url: 'http://5.9.86.210:19111/api/add-client',
+            data: formData,
+            type: 'POST',
+            contentType: false,
+            processData: false,
 
-            success: function (results) {
-                if (results.code == 0) {
-                    //alert('ack');
-                    popout('successpopup', 'slide');
+            success: function (data) {
 
-                    setTimeout(
-                        function () {
-                            change_page("#loginpage", "slide");
-                        }, 800);
-                    //change_page('#loginpage', 'slide');
-                }
+                popout('successpopup', 'slide');
+
+                setTimeout(
+                    function () {
+                        change_page("#loginpage", "slide");
+                    }, 800);
             },
 
-            error: function (results) {
-                if (results.code == 9) {
-                    //alert('ack');
+            error: function (data) {
+                if (data.code == 9) {
                     popout('failpopup', 'slide');
                     change_page('#loginpage', 'slide');
                 }
@@ -136,7 +136,7 @@ function create_loan(e) {
         var datastring = $("#loanform").serialize();
 
         $.ajax({
-            type: 'get',
+            type: 'post',
             url: 'http://5.9.86.210:19111/api/add-loan?',
             data: datastring,
 
@@ -162,7 +162,6 @@ function create_loan(e) {
                 //            //popout('loanpopup', 'slide');
             }
         });
-
     }
 }
 
@@ -191,7 +190,7 @@ function get_loans(email) {
 
     build = "";
 
-    $.get("http://5.9.86.210:19111/api/getloans/" + email,
+    $.post("http://5.9.86.210:19111/api/getloans/" + email,
 
         function (response) {
 
@@ -227,28 +226,31 @@ function get_loans(email) {
         });
 }
 
-function displayImage(evt){
-    var tgt = evt.target || window.event.srcElement,
-        files = tgt.files;
+function sendImage(e) {
 
-    // FileReader support
-    if (FileReader && files && files.length) {
-        var fr = new FileReader();
-        fr.onload = function () {
-            document.getElementById('img').src = fr.result;
+    e.preventDefault();
+
+    var form = $('#testform')[0];
+
+    var formData = new FormData(form);
+
+    $.ajax({
+        url: 'http://5.9.86.210:19111/api/test',
+        data: formData,
+        type: 'POST',
+        contentType: false,
+        processData: false,
+
+        success: function (data) {
+            alert('yes');
+        },
+
+        error: function (data) {
+            alert('no');
         }
-        fr.readAsDataURL(files[0]);
 
-    }
-
-    // Not supported
-    else {
-        alert("oops");
-        // fallback -- perhaps submit the input to an iframe and temporarily store
-        // them on the server until the user's session ends.
-    }
+    });
 }
-
 
 
 

@@ -17,8 +17,8 @@
     <meta name="msapplication-tap-highlight" content="no"/>
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1, width=device-width"/>
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *"/>
+    <!--<meta http-equiv="Content-Security-Policy"-->
+    <!--content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *"/>-->
 
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery-ui.js"></script>
@@ -73,14 +73,14 @@
         <br>
         <br>
         <!---->
-        <p>abc</p>
+        <!--<p>abc</p>-->
         <div>
-            <input type="text" id="username" placeholder="Username" style="color: #4CAF50; text-align: center"
+            <input type="text" id="username" placeholder="Email" style="color: #8A5241; text-align: center"
             >
         </div>
         <!---->
         <div>
-            <input type="password" id="lpassword" placeholder="Password" style="color: #4CAF50; text-align: center"
+            <input type="password" id="lpassword" placeholder="Password" style="color: #8A5241; text-align: center"
             >
         </div>
         <br>
@@ -251,8 +251,11 @@
         <!---->
         <label style="font-size: 14px">Date of Birth</label>
         <div>
-            <input type="date" id="edob" style="text-align: center">
+            <input type="date" id="edob" style="text-align: center" onkeyup="validate('edob','fv','7','addclient')"
+                   onblur="validate('edob','fv','7','addclient')">
         </div>
+        <span id="fv"></span>
+        <br>
 
         <label style="font-size: 14px">Email</label>
         <div>
@@ -330,14 +333,21 @@
 
         <label style="font-size: 14px">Date of Issue</label>
         <div>
-            <input type="date" id="edoi" style="text-align: center">
+            <input type="date" id="edoi" style="text-align: center" onkeyup="validate('edoi','dx','7','addclient')"
+                   onblur="validate('edoi','dx','7','addclient')">
         </div>
+        <span id="dx"></span>
+        <br>
 
         <label style="font-size: 14px">Expiry Date</label>
         <div>
-            <input type="date" id="eedate" style="text-align: center">
+            <input type="date" id="eedate" style="text-align: center" onkeyup="validate('eedate','eee','7','addclient')"
+                   onblur="validate('eedate','eee','7','addclient')">
         </div>
+        <span id="eee"></span>
         <br>
+        <br>
+
         <div class="align-center">
             <label for="title">Literacy Level</label>
         </div>
@@ -567,7 +577,7 @@
             <label>Date of Birth</label>
             <div>
                 <input type="date" class="form-control" name="date_of_birth" id="dob"
-                       onkeyup="validate('dob','db','7','addclient')">
+                       onkeyup="validate('dob','db','7','addclient')" onblur="validate('dob','db','7','addclient')">
             </div>
             <span id="db"></span>
             <br>
@@ -675,7 +685,8 @@
             <label>Date of Issue</label>
             <div>
                 <input type="date" class="form-control" name="issuedate" id="issuedate"
-                       onkeyup="validate('issuedate','idate','7','addclient')">
+                       onkeyup="validate('issuedate','idate','7','addclient')"
+                       onblur="validate('issuedate','idate','7','addclient')">
             </div>
             <span id="idate"></span>
             <br>
@@ -683,7 +694,8 @@
             <label>Expiry Date</label>
             <div>
                 <input type="date" class="form-control" name="expirydate" id="expirydate"
-                       onkeyup="validate('expirydate','exp','7','addclient')">
+                       onkeyup="validate('expirydate','exp','7','addclient')"
+                       onblur="validate('expirydate','exp','7','addclient')">
             </div>
             <span id="exp"></span>
             <br>
@@ -838,7 +850,6 @@
             </div>
         </form>
     </div>
-
 </div>
 
 <!--Loan page-->
@@ -894,7 +905,8 @@
             <label class="myfont">Salary Date</label>
             <div>
                 <input type="date" class="form-control" name="salary_date" id="salary_date"
-                       onkeyup="validate('salary_date','sd','7','addloanbutton')">
+                       onkeyup="validate('salary_date','sd','7','addloanbutton')"
+                       onblur="validate('salary_date','sd','7','addloanbutton')">
             </div>
             <span id="sd"></span>
             <br>
@@ -1097,11 +1109,23 @@
 <div data-role="page" id="test">
     <div data-role="content">
 
-        <img src="" height="200px" width="200px" id="img">
+        <!--<p>Select a File to Load:</p>-->
+        <!--<input id="inp" type="file" onchange="getBase64()"/>-->
 
-        <input type="file" id="testpic" onchange="displayImage(event)">
 
-        <button>test</button>
+        <!--<p>File Contents as DataURL:</p>-->
+        <!--<textarea id="textAreaFileContents"></textarea>-->
+        <form enctype="multipart/form-data" method="POST" id="testform">
+
+            <input type="text" id="mytext" name="mytext" value="sam">
+
+            <input type="file" id="inp" name="image">
+
+            <button onclick="sendImage(event)">TEST</button>
+
+        </form>
+
+
     </div>
 </div>
 
