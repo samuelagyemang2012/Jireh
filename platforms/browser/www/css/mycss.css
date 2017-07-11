@@ -1,0 +1,297 @@
+/*.row {*/
+    /*height: 100%;*/
+    /*!*width: 100%;*!*/
+/*}*/
+
+/*.h {*/
+    /*text-align: left;*/
+    /*color: #4CAF50;*/
+    /*!*color: #161415;*!*/
+/*}*/
+
+/*#profile {*/
+    /*background-color: #E2F5CD;*/
+    /*height: 220px;*/
+/*}*/
+
+/*#menu {*/
+    /*position: fixed;*/
+    /*!*left: 5%;*!*/
+    /*right: 5%;*/
+    /*!*height: 25px;*!*/
+    /*!*width: 20px;*!*/
+    /*z-index: 3;*/
+/*}*/
+
+/*#firstrow {*/
+    /*background-color: #FBB434;*/
+    /*!*align-content: center;*!*/
+    /*!*position: inherit;*!*/
+    /*!*padding-top: 56.25%;*!*/
+    /*border-top: none;*/
+    /*!*max-height: 28vh;*!*/
+    /*width: 100%;*/
+/*}*/
+
+/*#secondrow {*/
+    /*!*background-color: #19BAE8;*!*/
+    /*height: 180px;*/
+    /*border-top: 1px solid white;*/
+/*}*/
+
+/*#thirdrow {*/
+    /*background-color: #4CAF50;*/
+    /*height: 180px;*/
+    /*border-left: 1px solid white;*/
+    /*border-top: 1px solid white;*/
+/*}*/
+
+/*.icons {*/
+    /*color: #4CAF50;*/
+/*}*/
+
+/*#fourthrow {*/
+    /*background-color: indianred;*/
+    /*height: 180px;*/
+    /*border-top: 1px solid white;*/
+    /*border-left: 1px solid white;*/
+/*}*/
+
+/*#footer {*/
+    /*background-color: white;*/
+    /*border: none;*/
+/*}*/
+
+/*.btext {*/
+    /*color: #4CAF50;*/
+    /*font-size: 12px*/
+/*}*/
+
+/*.ficons {*/
+    /*color: #4CAF50;*/
+/*}*/
+
+/*#fmenu {*/
+    /*font-size: 15px;*/
+/*}*/
+
+/*.img-responsive {*/
+    /*max-width: 100%;*/
+    /*height: auto;*/
+    /*!*display: block;*!*/
+/*}*/
+
+/*@media screen and (max-width: 1366px) {*/
+    /*#firstrow {*/
+        /*background-color: black;*/
+        /*height: 80vh;*/
+    /*}*/
+
+    /*#secondrow {*/
+        /*height: 80vh;*/
+    /*}*/
+
+    /*#thirdrow {*/
+        /*height: 80vh;*/
+    /*}*/
+
+    /*#fourthrow {*/
+        /*height: 80vh;*/
+        /*!*padding-bottom: 50px;*!*/
+    /*}*/
+
+    /*#menu {*/
+        /*position: fixed;*/
+    /*}*/
+
+    /*#instagram {*/
+        /*font-size: 30px;*/
+    /*}*/
+
+    /*#facebook {*/
+        /*font-size: 30px;*/
+    /*}*/
+
+    /*#youtube {*/
+        /*font-size: 30px;*/
+    /*}*/
+
+    /*#fmenu {*/
+        /*font-size: 50px;*/
+    /*}*/
+
+    /*.btext {*/
+        /*font-size: 20px;*/
+        /*color: #4CAF50;*/
+        /*!*font-size: 12px*!*/
+    /*}*/
+
+    /*.img-responsive {*/
+        /*width: 100%;*/
+        /*height: 80vh;*/
+    /*}*/
+
+/*}*/
+
+/*@media screen and (max-width: 1024px) {*/
+    /*#firstrow {*/
+        /*!*background-color: darkred;*!*/
+        /*height: 80vh;*/
+    /*}*/
+
+    /*#secondrow {*/
+        /*height: 80vh;*/
+    /*}*/
+
+    /*#thirdrow {*/
+        /*height: 80vh;*/
+    /*}*/
+
+    /*#fourthrow {*/
+        /*height: 80vh;*/
+        /*!*padding-bottom: 50px;*!*/
+    /*}*/
+
+    /*#menu {*/
+        /*position: fixed;*/
+    /*}*/
+
+    /*#instagram {*/
+        /*font-size: 30px;*/
+    /*}*/
+
+    /*#facebook {*/
+        /*font-size: 30px;*/
+    /*}*/
+
+    /*#youtube {*/
+        /*font-size: 30px;*/
+    /*}*/
+
+    /*#fmenu {*/
+        /*font-size: 25px;*/
+    /*}*/
+
+    /*.img-responsive {*/
+        /*width: 100%;*/
+        /*height: 80vh;*/
+    /*}*/
+/*}*/
+
+/*@media screen and (max-width: 640px) {*/
+    /*#firstrow {*/
+        /*background-color: #0088bb;*/
+        /*height: 100vh;*/
+    /*}*/
+
+    /*#secondrow {*/
+        /*background-color: #b03911;*/
+        /*height: 100vh;*/
+    /*}*/
+
+    /*#thirdrow {*/
+        /*background-color: darkorchid;*/
+        /*height: 100vh;*/
+    /*}*/
+
+    /*!*#fourthrow {*!*/
+    /*!*height: 100vh;*!*/
+    /*!*}*!*/
+    /*#instagram {*/
+        /*font-size: 32px;*/
+    /*}*/
+
+    /*#facebook {*/
+        /*font-size: 32px;*/
+    /*}*/
+
+    /*#youtube {*/
+        /*font-size: 32px;*/
+    /*}*/
+
+    /*#fmenu {*/
+        /*font-size: 32px;*/
+    /*}*/
+
+    /*.ficons {*/
+        /*font-size: 122px;*/
+    /*}*/
+
+    /*.btext {*/
+        /*font-size: 15px;*/
+        /*color: #4CAF50;*/
+        /*!*font-size: 12px*!*/
+    /*}*/
+
+    /*!*#fi {*!*/
+        /*!*background-image: url("../img/odb.jpg");*!*/
+    /*!*}*!*/
+
+    /*.img-responsive {*/
+        /*!*padding-top: 10vh;*!*/
+        /*max-width: 200vh;*/
+        /*max-height: 100vh;*/
+        /*width: auto;*/
+        /*height: auto;*/
+    /*}*/
+
+/*}*/
+
+/*@media screen and (max-width: 420px) {*/
+    /*#firstrow {*/
+        /*!*background-color: red;*!*/
+        /*!*margin-bottom: 50px;*!*/
+        /*height: 29vh;*/
+    /*}*/
+
+    /*#secondrow {*/
+        /*background-color: yellow;*/
+        /*height: 29vh;*/
+    /*}*/
+
+    /*#thirdrow {*/
+        /*background-color: yellowgreen;*/
+        /*height: 29vh;*/
+    /*}*/
+
+    /*!*#fourthrow {*!*/
+    /*!*background-color: green;*!*/
+    /*!*height: 28vh;*!*/
+    /*!*!*padding-bottom: 50px;*!*!*/
+    /*!*}*!*/
+    /*#menu {*/
+        /*position: fixed;*/
+    /*}*/
+
+    /*#instagram {*/
+        /*font-size: 20px;*/
+    /*}*/
+
+    /*#facebook {*/
+        /*font-size: 20px;*/
+    /*}*/
+
+    /*#youtube {*/
+        /*font-size: 20px;*/
+    /*}*/
+
+    /*#fmenu {*/
+        /*font-size: 20px;*/
+    /*}*/
+
+    /*.btext {*/
+        /*color: #4CAF50;*/
+        /*font-size: 10px*/
+    /*}*/
+
+    /*.img-responsive {*/
+        /*max-width: 100vh;*/
+        /*max-height: 29vh;*/
+        /*width: auto;*/
+        /*height: auto;*/
+    /*}*/
+/*}*/
+
+.myheader{
+    background-color: #8A5241;
+}

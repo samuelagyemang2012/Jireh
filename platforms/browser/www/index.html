@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="./css/jquery.mobile.min.css"/>
+    <link rel="stylesheet" href="./css/waves.min.css"/>
+    <link rel="stylesheet" href="./css/animate.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/mycss.css"/>
+    <link rel="stylesheet" href="./css/nativedroid2.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1, width=device-width"/>
+    <!--<meta http-equiv="Content-Security-Policy"-->
+    <!--content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *"/>-->
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/jquery-mobile.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script src="./js/waves.min.js"></script>
+    <script src="./js/wow.min.js"></script>
+    <script src="./js/nativedroid2.js"></script>
+    <script src="./js/nd2settings.js"></script>
+    <script type="text/javascript" src="./js/myscript.js"></script>
+    <script type="text/javascript" src="./js/validate.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+//            get_slides();
+//
+            $("body>[data-role='panel']").panel().enhanceWithin();
+        });
+    </script>
+</head>
+
+<body style="height: 100%; width: 100%">
+
+<!--Login page-->
+<div data-role="page" id="loginpage">
+    <div data-role="header" style="background-color: #8A5241">
+        <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
+        <a href="index.html" class="ui-btn ui-btn-icon-right" data-transition="flip">
+            <!--<i class=""></i>-->
+        </a>
+    </div>
+
+    <div data-role="popup" id="loginfailpopup" class="ui-content" style="background-color: white; border: none">
+        <h4 style="color: crimson">Wrong username or password.</h4>
+    </div>
+
+    <div data-role="popup" id="loginfailpopup2" class="ui-content" style="background-color: white; border: none">
+        <h4 style="color: crimson">Please fill out all fields !</h4>
+    </div>
+
+    <div data-role="content">
+
+        <div class="align-center">
+            <img src="img/logo.png" height="200">
+            <!--<hr>-->
+        </div>
+
+        <div class="align-center">
+            <!--<h4>Login here !</h4>-->
+        </div>
+
+        <br>
+        <br>
+        <!---->
+        <!--<p>abc</p>-->
+        <div>
+            <input type="text" id="username" placeholder="Email" style="color: #8A5241; text-align: center"
+            >
+        </div>
+        <!---->
+        <div>
+            <input type="password" id="lpassword" placeholder="Password" style="color: #8A5241; text-align: center"
+            >
+        </div>
+        <br>
+        <!---->
+        <div>
+            <a data-role="button" data-transition="slide" onclick="login()" id="loginbutton"
+               style="background-color: #8A5241;color: #fff">Login</a>
+        </div>
+        <!---->
+        <br>
+        <div class="align-center">
+            <h5>Sign up <a href="#createmyloanpage" data-transition="slide" style="color: #8A5241">here !</a></h5>
+        </div>
+    </div>
+
+</div>
+
+<!--My Loan page-->
+<div data-role="page" id="myloanpage">
+    <div data-role="header" style="background-color: #8A5241">
+        <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
+
+        <a href="#loginpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
+            <i class="zmdi zmdi zmdi-home"></i>
+        </a>
+
+        <ul data-role="tab" data-swipe="true" class="nd2Tabs">
+            <li data-tab="add" class="nav-item waves-effect waves-button waves-light">
+                <a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"
+                   href="#myloanpage">Loans</a>
+            </li>
+
+            <!--<li data-tab="add" class="nav-item waves-effect waves-button waves-light">-->
+            <!--<a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"-->
+            <!--href="#editpage">MY ACCOUNT</a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+
+    <div data-role="content" id="myloans">
+        <!--<div class='nd2-card'>-->
+        <!--<div class='card-title'>-->
+        <!--<h4 class='card-primary-title' style='color: #8A5241;'> Amount Requested </h4>-->
+        <!--<h5>GHC 12000</h5>-->
+        <!--<h4 class='card-primary-title' style='color: #8A5241;'> Status</h4>-->
+        <!--<h5>Pending</h5>-->
+        <!--<div class='card-action'>-->
+        <!--<div class='row between-xs'>-->
+        <!--<div class='col-xs-12 align-right'>-->
+        <!--<div class='box'>-->
+        <!--<a href='#'-->
+        <!--class='ui-btn ui-btn-inline ui-btn-fab waves-effect waves-button waves-effect waves-button'></a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+
+    <!--footer-->
+    <div data-role="footer" data-position="fixed" id="footer" style="background-color: #fff; border: none">
+        <div class="row">
+            <div class="col-xs-6"></div>
+
+            <div class="col-xs-6">
+                <div class="align-right">
+                    <a href="#loanpage" data-role="button" class="ui-btn" style="background-color: #8A5241">
+                        <i class="zmdi zmdi-plus zmdi-hc-2x" style="color: #fff"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Edit page-->
+<div data-role="page" id="editpage">
+    <div data-role="header" style="background-color: #8A5241">
+        <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
+
+        <a href="#myloanpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
+            <i class="zmdi zmdi zmdi-arrow-back"></i>
+        </a>
+
+        <ul data-role="tab" data-swipe="true" class="nd2Tabs">
+            <li data-tab="add" class="nav-item waves-effect waves-button waves-light">
+                <a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"
+                   href="#myloanpage">Loans</a>
+            </li>
+
+            <!--<li data-tab="add" class="nav-item waves-effect waves-button waves-light">-->
+            <!--<a data-transition="slide" data-role="button" class="ui-btn" style="font-size: 14px"-->
+            <!--href="#editpage">MY ACCOUNT</a>-->
+            <!--</li>-->
+        </ul>
+    </div>
+
+    <div data-role="content">
+        <div class="align-center">
+            <label for="title">Title</label>
+        </div>
+
+        <select name="title" id="etitle">
+            <option value="1">MR</option>
+            <option value="2">MISS</option>
+            <option value="3">MRS</option>
+            <option value="4">DR</option>
+            <option value="5">REV</option>
+            <option value="6">OTHER</option>
+        </select>
+        <br>
+
+        <!--name-->
+        <label style="font-size: 14px">Surname</label>
+        <div>
+            <input type="text" id="esname" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">First Name</label>
+        <div>
+            <input type="text" id="efname" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Other Names</label>
+        <div>
+            <input type="text" id="eoname" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Name of Spouse</label>
+        <div>
+            <input type="text" id="espousename" style="text-align: center">
+        </div>
+        <br>
+
+        <label style="font-size: 14px">Spouse Mobile Number</label>
+        <div>
+            <input type="tel" id="espousetel" style="text-align: center">
+        </div>
+        <br>
+
+        <label style="font-size: 14px">Number of Children</label>
+        <div>
+            <input type="number" id="enumchilren" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Residential Address</label>
+        <div>
+            <input type="text" id="eraddress" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Mobile)</label>
+        <div>
+            <input type="text" id="emtel" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Office)</label>
+        <div>
+            <input type="text" id="eotel" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Telephone Number(Home)</label>
+        <div>
+            <input type="text" id="ehtel" style="text-align: center">
+        </div>
+        <hr>
+        <!---->
+        <label style="font-size: 14px">Date of Birth</label>
+        <div>
+            <input type="date" id="edob" style="text-align: center" onkeyup="validate('edob','fv','7','addclient')"
+                   onblur="validate('edob','fv','7','addclient')">
+        </div>
+        <span id="fv"></span>
+        <br>
+
+        <label style="font-size: 14px">Email</label>
+        <div>
+            <input type="email" id="eemail" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Occupation</label>
+        <div>
+            <input type="text" id="eoccup" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Nationality</label>
+        <div>
+            <input type="text" id="enation" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Name of Employer</label>
+        <div>
+            <input type="text" id="eename" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Employer Address</label>
+        <div>
+            <input type="text" id="eeaddress" style="text-align: center">
+        </div>
+        <hr>
+
+        <div class="align-center">
+            <label for="title">Marital Status</label>
+        </div>
+        <select name="title" id="emstatus">
+            <option value="1">MARRIED</option>
+            <option value="2">DIVORCED</option>
+            <option value="3">SINGLE</option>
+            <option value="4">OTHER</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Source of Funds</label>
+        </div>
+        <select name="source of Funds" id="efunds">
+            <option value="1">SALARY</option>
+            <option value="2">TRADING</option>
+            <option value="3">INVESTMENT</option>
+            <option value="4">OTHER</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Monthly Income (GHS)</label>
+        </div>
+        <select name="Monthly Income" id="emincome">
+            <option value="1">1---1000</option>
+            <option value="2">1001-2000</option>
+            <option value="3">2001-5000</option>
+            <option value="3">5001 Plus</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Identification</label>
+        </div>
+        <select name="Monthly Income" id="eid">
+            <option value="1">PASSPORT</option>
+            <option value="2">VOTER</option>
+            <option value="3">DRIVER'S LICENSE</option>
+            <option value="3">OTHER</option>
+        </select>
+
+        <label style="font-size: 14px">ID Number</label>
+        <div>
+            <input type="text" id="eidnum" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Date of Issue</label>
+        <div>
+            <input type="date" id="edoi" style="text-align: center" onkeyup="validate('edoi','dx','7','addclient')"
+                   onblur="validate('edoi','dx','7','addclient')">
+        </div>
+        <span id="dx"></span>
+        <br>
+
+        <label style="font-size: 14px">Expiry Date</label>
+        <div>
+            <input type="date" id="eedate" style="text-align: center" onkeyup="validate('eedate','eee','7','addclient')"
+                   onblur="validate('eedate','eee','7','addclient')">
+        </div>
+        <span id="eee"></span>
+        <br>
+        <br>
+
+        <div class="align-center">
+            <label for="title">Literacy Level</label>
+        </div>
+        <select name="literacy level" id="eliteracy">
+            <option value="1">Univeristy</option>
+            <option value="2">College/Polytechnic</option>
+            <option value="3">Secondary</option>
+            <option value="4">Primary</option>
+            <option value="5">No Formal Education</option>
+            <option value="6">Other</option>
+        </select>
+        <br>
+
+        <label style="font-size: 14px">Hometown</label>
+        <div>
+            <input type="text" id="ehometown" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Social Security</label>
+        <div>
+            <input type="text" id="esoc_sec" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Number of Members in Household</label>
+        <div>
+            <input type="number" id="enummembers" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Number of Dependants</label>
+        <div>
+            <input type="number" id="enum-dependants" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Father's Name</label>
+        <div>
+            <input type="text" id="efather" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Mother's Name</label>
+        <div>
+            <input type="text" id="emother" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Next of Kin's Name</label>
+        <div>
+            <input type="text" id="ekinname" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Next of Kin's Address</label>
+        <div>
+            <input type="text" id="ekinaddress" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Next of Kin's Mobile Number</label>
+        <div>
+            <input type="text" id="ekintel" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Relationship To Next Of Kin</label>
+        <div>
+            <input type="text" id="ekinrel" style="text-align: center">
+        </div>
+
+        <label style="font-size: 14px">Spouse Address</label>
+        <div>
+            <input type="text" id="espouseaddress" style="text-align: center">
+        </div>
+
+        <div>
+            <a data-transition="slide" style="background-color: #8A5241;color: #fff" data-role="button" id="enext"
+               href="">Update</a>
+        </div>
+    </div>
+
+</div>
+
+<!--Signup page-->
+<div data-role="page" id="createmyloanpage">
+
+    <div data-role="header" style="background-color: #8A5241">
+        <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
+
+        <a href="#loginpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse"><i
+                class="zmdi zmdi zmdi-arrow-back"></i></a>
+    </div>
+
+    <div data-role="popup" id="successpopup" class="ui-content" style="background-color: white; border: none">
+        <h4 style="color: #4CAF50">Sign-up successful !</h4>
+    </div>
+
+    <div data-role="popup" id="failpopup" class="ui-content" style="background-color: white; border: none">
+        <h4 style="color: crimson">Sign-up failed</h4>
+    </div>
+
+    <div data-role="popup" id="sfailpopup" class="ui-content" style="background-color: white; border: none">
+        <h4 style="color: crimson">Passwords do not match !</h4>
+    </div>
+
+    <div data-role="popup" id="sfailpopup2" class="ui-content" style="background-color: white; border: none">
+        <h4 style="color: crimson">Please fill out all fields !</h4>
+    </div>
+
+    <div data-role="popup" id="sfailpopup3" class="ui-content" style="background-color: white; border: none">
+        <h4 style="color: crimson">You must agree with the terms and conditions.</h4>
+    </div>
+
+    <!--<div data-role="popup" id="sfailpopup3" class="ui-content" style="background-color: white; border: none">-->
+    <!--<h4 style="color: crimson">Invalid telephone number !</h4>-->
+    <!--</div>-->
+
+    <!--<div data-role="popup" id="sfailpopup4" class="ui-content" style="background-color: white; border: none">-->
+    <!--<h4 style="color: crimson">Your password should be at least 8 characters long !</h4>-->
+    <!--</div>-->
+
+    <div data-role="content">
+        <form enctype="multipart/form-data" id="signupform">
+            <div>
+                <label>Title</label>
+                <select name="title" id="title" class="form-control">
+                    <option value="1">MR</option>
+                    <option value="2">MISS</option>
+                    <option value="3">MRS</option>
+                    <option value="4">DR</option>
+                    <option value="5">REV</option>
+                    <option value="6">OTHER</option>
+                </select>
+            </div>
+            <br>
+
+            <label>Gender</label>
+            <select name="gender" id="gender" class="form-control">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <br>
+
+            <label>Surname</label>
+            <div>
+                <input type="text" class="form-control" name="surname" id="surname"
+                       onkeyup="validate('surname','surnamesp','2','addclient')" min="2">
+                <span id="surnamesp"></span>
+            </div>
+            <br>
+
+            <label>Firstname</label>
+            <div>
+                <input type="text" class="form-control" name="firstname" id="firstname"
+                       onkeyup="validate('firstname','firstnamesp','2','addclient')"
+                       min="2">
+                <span id="firstnamesp"></span>
+            </div>
+            <br>
+
+            <label>Other names</label>
+            <div>
+                <input type="text" class="form-control" name="othernames" id="othernames">
+            </div>
+            <!--{{&#45;&#45;<span id="othernamesp"></span>&#45;&#45;}}-->
+            <br>
+
+            <label>Name of Spouse</label>
+            <div>
+                <input type="text" class="form-control" name="spousename" id="spousename">
+            </div>
+            <!--{{&#45;&#45;<span></span>&#45;&#45;}}-->
+            <br>
+
+            <label>Spouse Address</label>
+            <div>
+                <input type="text" class="form-control" name="saddress" id="saddress"
+                       min="">
+            </div>
+            <br>
+
+            <label>Spouse Mobile Number</label>
+            <div>
+                <input type="tel" class="form-control" name="stel" id="stel" min="10">
+            </div>
+            <br>
+
+            <label>Occupation of Spouse</label>
+            <div>
+                <input type="text" class="form-control" name="soccup" id="soccup" min="10">
+            </div>
+            <br>
+
+            <label>Number of Children</label>
+            <div>
+                <input type="number" class="form-control" name="num_children" id="numchildren" min="0"
+                       onkeyup="validate('num_children','child','0','addclient')">
+            </div>
+            <span id="child"></span>
+            <br>
+
+            <label>Residential Address</label>
+            <div>
+                <input type="text" class="form-control" name="residential_address" id="raddress" min="6"
+                       onkeyup="validate('raddress','rad','6','addclient')">
+            </div>
+            <span id="rad"></span>
+            <br>
+
+            <label>Mailing Address</label>
+            <div>
+                <input type="text" class="form-control" name="mailing_address" id="maddress" min="6"
+                       onkeyup="validate('maddress','mad','6','addclient')">
+            </div>
+            <span id="mad"></span>
+            <br>
+
+            <label>Telephone(Mobile)</label>
+            <div>
+                <input type="tel" class="form-control" name="telephone_mobile" id="telmob" min="10"
+                       onkeyup="validate('telmob','tmob','10','addclient')">
+            </div>
+            <span id="tmob"></span>
+            <br>
+
+            <label>Telephone(Official)</label>
+            <div>
+                <input type="tel" name="telephone_official" class="form-control" id="teloff" min="10"
+                       onkeyup="validate('teloff','toff','10','addclient')">
+            </div>
+            <span id="toff"></span>
+            <br>
+
+            <label>Date of Birth</label>
+            <div>
+                <input type="date" class="form-control" name="date_of_birth" id="dob"
+                       onkeyup="validate('dob','db','7','addclient')" onblur="validate('dob','db','7','addclient')">
+            </div>
+            <span id="db"></span>
+            <br>
+
+            <label>Email</label>
+            <div>
+                <input type="email" class="form-control" name="email" id="email" min="6"
+                       onkeyup="validate('email','em','6','addclient')">
+            </div>
+            <span id="em"></span>
+            <br>
+
+            <label>Occupation</label>
+            <div>
+                <input type="text" class="form-control" name="occupation" id="occupation" min="5"
+                       onkeyup="validate('occupation','occup','5','addclient')">
+            </div>
+            <span id="occup"></span>
+            <br>
+
+            <label>Position Held</label>
+            <div>
+                <input type="text" class="form-control" name="position" id="position"
+                       min="5" onkeyup="validate('position','pos','5','addclient')">
+            </div>
+            <span id="pos"></span>
+            <br>
+
+            <label>Nationality</label>
+            <div>
+                <input type="text" class="form-control" name="nationality" id="nationality"
+                       min="5" onkeyup="validate('nationality','nation','5','addclient')">
+            </div>
+            <span id="nation"></span>
+            <br>
+
+            <label>Number of Years in Current Employment</label>
+            <div>
+                <input type="number" class="form-control" name="numyears" id="numyears"
+                       min="1" onkeyup="validate('numyears','nyears','1','addclient')">
+            </div>
+            <span id="nyears"></span>
+            <br>
+
+            <label>Employer Name</label>
+            <div>
+                <input type="text" class="form-control" name="employer_name" id="empname"
+                       min="5" onkeyup="validate('empname','ename','5','addclient')">
+            </div>
+            <span id="ename"></span>
+            <br>
+
+            <label>Employer Address</label>
+            <div>
+                <input type="text" class="form-control" name="employer_address" id="empaddress"
+                       min="5" onkeyup="validate('empaddress','eadd','5','addclient')">
+            </div>
+            <span id="eadd"></span>
+            <br>
+
+            <label>Marital Status</label>
+            <select name="marital_status" id="mstatus" class="form-control">
+                <option value="1">MARRIED</option>
+                <option value="2">DIVORCED</option>
+                <option value="3">SINGLE</option>
+                <option value="4">OTHER</option>
+            </select>
+            <br>
+
+            <label>Source of Funds</label>
+            <select name="source_of_funds" id="sof" class="form-control">
+                <option value="1">SALARY</option>
+                <option value="2">TRADING</option>
+                <option value="3">INVESTMENT</option>
+                <option value="4">OTHER</option>
+            </select>
+            <br>
+
+            <label>Monthly Income (GHS)</label>
+            <select name="monthly_income" id="mincome" class="form-control">
+                <option value="1">1---1000</option>
+                <option value="2">1001---2000</option>
+                <option value="3">2001---5001</option>
+                <option value="4">5001 Plus</option>
+            </select>
+            <br>
+
+            <label>Identification</label>
+            <select name="identification" id="identification" class="form-control">
+                <option value="1">PASSPORT</option>
+                <option value="2">VOTER</option>
+                <option value="3">DRIVER'S LICENSE</option>
+                <option value="4">OTHER</option>
+            </select>
+            <br>
+
+            <label>ID Number</label>
+            <div>
+                <input type="text" class="form-control" name="identification_number" id="idnum"
+                       min="5" onkeyup="validate('idnum','idn','5','addclient')">
+            </div>
+            <span id="idn"></span>
+            <br>
+
+            <label>Date of Issue</label>
+            <div>
+                <input type="date" class="form-control" name="issuedate" id="issuedate"
+                       onkeyup="validate('issuedate','idate','7','addclient')"
+                       onblur="validate('issuedate','idate','7','addclient')">
+            </div>
+            <span id="idate"></span>
+            <br>
+
+            <label>Expiry Date</label>
+            <div>
+                <input type="date" class="form-control" name="expirydate" id="expirydate"
+                       onkeyup="validate('expirydate','exp','7','addclient')"
+                       onblur="validate('expirydate','exp','7','addclient')">
+            </div>
+            <span id="exp"></span>
+            <br>
+
+            <label>Literacy</label>
+            <select name="literacy" id="literacy" class="form-control">
+                <option value="1">UNIVERSITY</option>
+                <option value="2">COLLEGE/POLYTECHNIC</option>
+                <option value="3">SECONDARY</option>
+                <option value="4">PRIMARY</option>
+                <option value="5">NO FORMAL EDUCATION</option>
+                <option value="6">PRIMARY</option>
+            </select>
+            <br>
+
+            <label>Hometown</label>
+            <div>
+                <input type="text" class="form-control" name="hometown" id="hometown"
+                       min="5" onkeyup="validate('hometown','h','5','addclient')">
+            </div>
+            <span id="h"></span>
+            <br>
+
+            <label>Social Security Number</label>
+            <div>
+                <input type="text" class="form-control" name="social_security" id="scnumber"
+                       min="5" onkeyup="validate('scnumber','soc','5','addclient')">
+            </div>
+            <span id="soc"></span>
+            <br>
+
+            <label>Number of Member in Household</label>
+            <div>
+                <input type="number" class="form-control" name="numhousehold" id="numhousehold"
+                       min="1" onkeyup="validate('numhousehold','nh','1','addclient')">
+            </div>
+            <span id="nh"></span>
+            <br>
+
+            <label>Number of Dependants</label>
+            <div>
+                <input type="number" class="form-control" name="numdependants" id="numdependants"
+                       min="1" onkeyup="validate('numdependants','nd','1','addclient')">
+            </div>
+            <span id="nd"></span>
+            <br>
+
+            <label>Father's Name</label>
+            <div>
+                <input type="text" class="form-control" name="father" id="father" min="2"
+                       onkeyup="validate('father','fa','2','addclient')">
+            </div>
+            <span id="fa"></span>
+            <br>
+
+            <label>Mother's Name</label>
+            <div>
+                <input type="text" class="form-control" name="mother" id="mother"
+                       min="2" onkeyup="validate('mother','mo','2','addclient')">
+            </div>
+            <span id="mo"></span>
+            <br>
+
+            <label>Next of Kin's Name</label>
+            <div>
+                <input type="text" class="form-control" name="kname" id="kname"
+                       min="2" onkeyup="validate('kname','kn','2','addclient')">
+            </div>
+            <span id="kn"></span>
+            <br>
+
+            <label>Next of Kin's Address</label>
+            <div>
+                <input type="text" class="form-control" name="kaddress" id="kaddress"
+                       min="5" onkeyup="validate('kaddress','ka','5','addclient')">
+            </div>
+            <span id="ka"></span>
+            <br>
+
+            <label>Next of Kin's Mobile Number</label>
+            <div>
+                <input type="tel" class="form-control" name="ktel" id="ktel" min="10"
+                       min="10" onkeyup="validate('ktel','kt','10','addclient')">
+            </div>
+            <span id="kt"></span>
+            <br>
+
+            <label>Relationship to Kin's Name</label>
+            <div>
+                <input type="text" class="form-control" name="krel" id="krel"
+                       min="3" onkeyup="validate('krel','kr','3','addclient')">
+            </div>
+            <span id="kr"></span>
+            <br>
+
+            <!--{{&#45;&#45;<label>Username</label>&#45;&#45;}}-->
+            <!--{{&#45;&#45;<div>&#45;&#45;}}-->
+            <!--{{&#45;&#45;<input type="text" class="form-control" name="username" id="username" >&#45;&#45;}}-->
+            <!--{{&#45;&#45;</div>&#45;&#45;}}-->
+            <!--{{&#45;&#45;<br>&#45;&#45;}}-->
+
+            <label>Password</label>
+            <div>
+                <input type="password" class="form-control" name="password" id="password" min="6"
+                       onkeyup="validate('password','pass','6','addclient')">
+            </div>
+            <span id="pass"></span>
+            <br>
+
+            <label>Confirm Password</label>
+            <div>
+                <input type="password" class="form-control" name="cpassword" id="cpassword" min="6"
+                       onkeyup="">
+            </div>
+            <br>
+
+            <h3>Declaration</h3>
+            <p>
+                I/We certify that the above statements are true and complete. By signing below, I/We agree to
+                abide by
+                the
+                terms
+                and conditions of this account and agree to be bound by them.
+            </p>
+            <br>
+
+
+            <img src="" id="image" height="200px" width="200px"/>
+
+            <br>
+            <br>
+            <label>Upload Picture</label>
+            <div>
+                <input type="file" class="form-control" name="pic" id="pic"
+                       onkeyup="validate('pic')" onchange="readURL(this)">
+            </div>
+            <br>
+            <br>
+
+            <div>
+                <select name="agree" id="agree" class="form-control">
+                    <option value="1">I Agree</option>
+                    <option value="2">I Do Not Agree</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <button type="" onclick="add_client(event)" class="btn btn-primary" id="addclient"
+                        style="background-color: #8A5241; color: #fff">SUBMIT
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--Loan page-->
+<div data-role="page" id="loanpage">
+    <div data-role="header" style="background-color: #8A5241">
+        <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
+
+        <a href="#myloanpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse"><i
+                class="zmdi zmdi zmdi-arrow-back"></i></a>
+    </div>
+
+    <div data-role="popup" id="loanpopup" class="ui-content" style="background-color: white; border: none">
+        <h3>Your loan application was successful.</h3>
+    </div>
+
+    <div data-role="popup" id="loanpopup1" class="ui-content" style="background-color: white; border: none">
+        <h3>You must agree with the terms and conditions.</h3>
+    </div>
+
+    <div data-role="popup" id="loanpopup2" class="ui-content" style="background-color: white; border: none">
+        <h3>Please fill all fields.</h3>
+    </div>
+
+    <div data-role="content">
+        <form id="loanform">
+
+            <input type="key" hidden name="client_email" id="client_email">
+
+            <label class="myfont">Net Monthly Salary/Sales (GHS)</label>
+            <div>
+                <input type="number" class="form-control" name="num_monthly" id="net_monthly"
+                       onkeyup="validate('num_monthly','nm','1','addloanbutton')">
+            </div>
+            <span id="nm"></span>
+            <br>
+
+            <label class="myfont">Any Other Source of Income</label>
+            <div>
+                <input type="text" class="form-control" name="other_source" id="other_source"
+                       onkeyup="validate('other_source','os','2','addloanbutton')">
+            </div>
+            <span id="os"></span>
+            <br>
+
+            <label class="myfont">Bank/Branch</label>
+            <div>
+                <input type="text" class="form-control" name="bank" id="bank"
+                       onkeyup="validate('bank','b','2','addloanbutton')">
+            </div>
+            <span id="b"></span>
+            <br>
+
+            <label class="myfont">Salary Date</label>
+            <div>
+                <input type="date" class="form-control" name="salary_date" id="salary_date"
+                       onkeyup="validate('salary_date','sd','7','addloanbutton')"
+                       onblur="validate('salary_date','sd','7','addloanbutton')">
+            </div>
+            <span id="sd"></span>
+            <br>
+            <br>
+
+            <h3 class="myfont">LOANS</h3>
+            <hr>
+            <!--{{&#45;&#45;<br>&#45;&#45;}}-->
+
+            <label class="myfont">Number of Current Loans</label>
+            <div>
+                <input type="number" class="form-control" name="numloans" id="numloans"
+                       onkeyup="validate('numloans','nl','0','addloanbutton')">
+            </div>
+            <span id="nl"></span>
+            <br>
+
+            <label class="myfont">Total Monthly Payments</label>
+            <div>
+                <input type="number" class="form-control" name="total_monthly_payments"
+                       id="total_monthly_payments"
+
+                       onkeyup="validate('total_monthly_payments','tmp','0','addloanbutton')">
+            </div>
+            <span id="tmp"></span>
+            <br>
+
+            <label class="myfont">Name of Institution(s)</label>
+            <div>
+                <input type="text" class="form-control" name="name_insti" id="name_insti"
+                       onkeyup="validate('name_insti','ni','2','addloanbutton')">
+            </div>
+            <span id="ni"></span>
+            <br>
+
+            <h3 class="myfont">LOAN REQUEST</h3>
+            <hr>
+
+            <label class="myfont">Amount Requested</label>
+            <div>
+                <input type="number" class="form-control" name="amount" id="amount"
+                       onkeyup="validate('amount','a','1','addloanbutton')">
+            </div>
+            <span id="a"></span>
+            <br>
+
+            <label class="myfont">Proposed Loan Period</label>
+            <div>
+                <input type="number" class="form-control" name="loan_period" id="loan_period"
+                       onkeyup="validate('loan_period','lp','1','addloanbutton')">
+            </div>
+            <span id="lp"></span>
+            <br>
+
+            <label class="myfont">Purpose of Loan</label>
+            <div>
+                <input class="form-control" name="purpose" id="purpose"
+                       onkeyup="validate('purpose','p','5','addloanbutton')">
+            </div>
+            <span id="p"></span>
+            <br>
+
+            <label class="myfont">Collateral Details</label>
+            <div>
+                <input class="form-control" name="collateral" id="collateral"
+                       onkeyup="validate('collateral','c','5','addloanbutton')">
+            </div>
+            <span id="c"></span>
+            <br>
+
+            <label class="myfont">Cash Collection Service</label>
+            <div>
+                <select name="cash_service" class="form-control">
+                    <option value="4">YES</option>
+                    <option value="5">NO</option>
+                </select>
+            </div>
+            <br>
+
+            <h3 class="myfont">WITNESS</h3>
+            <hr>
+
+            <label class="myfont">Witness' Name</label>
+            <div>
+                <input type="text" class="form-control" name="wname" id="wname"
+                       onkeyup="validate('wname','wn','2','addloanbutton')">
+            </div>
+            <span id="wn"></span>
+            <br>
+
+            <label class="myfont">Witness' Employer</label>
+            <div>
+                <input type="text" class="form-control" name="wemployer" id="wemployer"
+                       onkeyup="validate('wemployer','we','2','addloanbutton')">
+            </div>
+            <span id="we"></span>
+            <br>
+
+            <label class="myfont">Witness' Telephone Number</label>
+            <div>
+                <input type="tel" class="form-control" name="wtel" id="wtel"
+                       onkeyup="validate('wtel','wt','10','addloanbutton')">
+            </div>
+            <span id="wt"></span>
+            <br>
+
+            <h3 class="myfont">DECLARATION</h3>
+            <hr>
+
+            <p style="text-align: justify">
+                I have applied for a loan as detailed above and hereby declare that information
+                given is in all respects true and accurate. I promise to repay the loan in accordance with the
+                repayment terms agreed with JIREH MICROFINANCE LTD.
+            </p>
+
+            <p>
+                I agree to allow JML to verify information given on this loan application form from any source.
+                In case of late payment, JIREH MICROFINANCE LTD. is entitled to follow up on payments and may
+                ask for the remaining balance inclusive of interest accrued to be paid in a lump sum without
+                recourse to the repayment installment agreed on.
+            </p>
+
+            <p>
+                JIREH MICROFINANCE LTD will obtain information about you from the credit bureaus to check status
+                and identity. The bureaus will record our enquiries about you.
+                JIREH MICROFINANCE shall also disclose your credit transactions to credit
+                bureau in accordance with the Credit Reporting
+                Act, 2007(Act 726)
+            </p>
+
+            <br>
+
+            <select name="agree" class="form-control" id="ag">
+                <option value="1">Agree</option>
+                <option value="2">I Do Not Agree</option>
+            </select>
+            <br>
+
+            <button type="" onclick="create_loan(event)" class="btn btn-primary" id="addloanbutton"
+                    style="background-color: #8A5241; border: none; color: #fff">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
+
+<!--declaration page2-->
+<div data-role="page" id="declarepage2">
+    <div data-role="header" style="background-color: #8A5241">
+        <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
+
+        <a href="#loanpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
+            <i class="zmdi zmdi zmdi-arrow-back"></i>
+        </a>
+    </div>
+
+    <div data-role="content">
+        <p style="text-align: justify">
+            I have applied for a loan as detailed above and hereby declare that information
+            given by me <span><b style="color:#8A5241">Samuel Agyemang</b></span> is in all respects true and accurate.
+            I promise to repay the
+            loan in accordance with the
+            repayment terms agreed with JIREH MICROFINANCE LTD.
+        </p>
+
+        <p>
+            I agree to allow JML to verify information given on this loan application form from any source. In case of
+            late
+            payment, JIREH MICRFINACE
+            LTD. is entitled to follow up on payaments and may ask for the remaining balance inclusive of interest
+            accrued
+            to be paid in a lump sum
+            without recourse to the repayment installment agreed on.
+        </p>
+
+        <p>
+            JIREH MICROFINANCE LTD will obtain information about you from the credit bureaus to check status and
+            identity.
+            The bureaus will record our
+            enquiries about you. JIREH MICROFINANCE shall also disclose your credit transactions to credit bureau in
+            accordance with the Credit Reporting
+            Act, 2007(Act 726)
+        </p>
+
+        <select name="loan" id="lagreed">
+            <option value="1">I DO NOT AGREE</option>
+            <option value="2">I AGREE</option>
+        </select>
+        <br>
+
+        <div class="align-center">
+            <a data-role="button" id="loandone" style="background-color: #8A5241;color: #fff"
+               onclick="myloans()">Done</a>
+        </div>
+
+    </div>
+</div>
+
+<!--test-->
+<div data-role="page" id="test">
+    <div data-role="content">
+
+        <!--<p>Select a File to Load:</p>-->
+        <!--<input id="inp" type="file" onchange="getBase64()"/>-->
+
+
+        <!--<p>File Contents as DataURL:</p>-->
+        <!--<textarea id="textAreaFileContents"></textarea>-->
+        <form enctype="multipart/form-data" method="POST" id="testform">
+
+            <input type="text" id="mytext" name="mytext" value="sam">
+
+            <input type="file" id="inp" name="image">
+
+            <button onclick="sendImage(event)">TEST</button>
+
+        </form>
+
+
+    </div>
+</div>
+
+</body>
+
+</html>
