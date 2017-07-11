@@ -36,6 +36,15 @@
         },
         "cordova-plugin-file-transfer": {
             "PACKAGE_NAME": "com.npontu.jireh"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.npontu.jireh"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.npontu.jireh"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.npontu.jireh"
         }
     },
     "dependent_plugins": {
