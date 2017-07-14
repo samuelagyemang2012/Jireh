@@ -90,12 +90,24 @@ function add_client(e) {
 
             success: function (data) {
 
-                popout('successpopup', 'slide');
+                if (data.code == '12') {
+                    popout('exist', 'slide');
+                    //Your email or social security number is already taken
+                }
 
-                setTimeout(
-                    function () {
-                        change_page("#loginpage", "slide");
-                    }, 800);
+                if (data.code == '11') {
+                    popout('sfailpopup2', 'slide');
+                }
+
+                if (data.code == 0) {
+                    popout('successpopup', 'slide');
+
+                    setTimeout(
+                        function () {
+                            change_page("#loginpage", "slide");
+                        }, 800);
+                }
+
             },
 
             error: function (data) {
