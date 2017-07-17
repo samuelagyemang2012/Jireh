@@ -14,6 +14,10 @@ function popout(id, transition) {
     $("#" + id).popup("open", {transition: transition});
 }
 
+function popout_close(id, transition) {
+    $("#" + id).popup("close", {transition: transition});
+}
+
 function change_page(page, transition) {
     $.mobile.pageContainer.pagecontainer("change", page, {transition: transition});
 }
@@ -47,6 +51,8 @@ function login() {
 }
 
 function add_client(e) {
+
+    popout('loading', 'slide');
 
     e.preventDefault();
 
@@ -91,15 +97,56 @@ function add_client(e) {
             success: function (data) {
 
                 if (data.code == '12') {
-                    popout('exist', 'slide');
-                    //Your email or social security number is already taken
+
+                    setTimeout(
+                        function () {
+                            document.getElementById('loading').innerHTML = "Your email or social security number is already taken";
+                            document.getElementById('loading').style.color = "crimson";
+                        }, 200);
+
+                    setTimeout(
+                        function () {
+                            popout_close('loading', 'slide');
+                            document.getElementById('loading').innerHTML = "Processing Request";
+                            document.getElementById('loading').style.color = "#4CAF50";
+                            //popout_close('apploading', 'slide');
+                        }, 800);
                 }
 
                 if (data.code == '11') {
-                    popout('sfailpopup2', 'slide');
+
+                    setTimeout(
+                        function () {
+                            document.getElementById('loading').innerHTML = "Invalid Data Provided";
+                            document.getElementById('loading').style.color = "crimson";
+                        }, 200);
+
+                    setTimeout(
+                        function () {
+                            popout_close('loading', 'slide');
+                            document.getElementById('loading').innerHTML = "Processing Request";
+                            document.getElementById('loading').style.color = "saddlebrown";
+                        }, 800);
+                }
+
+                if (data.code == '14') {
+
+                    setTimeout(
+                        function () {
+                            document.getElementById('loading').innerHTML = "Picure failed to upload";
+                            document.getElementById('loading').style.color = "crimson";
+                        }, 200);
+
+                    setTimeout(
+                        function () {
+                            popout_close('loading', 'slide');
+                            document.getElementById('loading').innerHTML = "Processing Request";
+                            document.getElementById('loading').style.color = "saddlebrown";
+                        }, 800);
                 }
 
                 if (data.code == 0) {
+
                     popout('successpopup', 'slide');
 
                     setTimeout(
@@ -108,13 +155,24 @@ function add_client(e) {
                         }, 800);
                 }
 
+                if (data.code == 9) {
+                    popout('failpopup', 'slide');
+
+                    setTimeout(
+                        function () {
+                            change_page("#loginpage", "slide");
+                        }, 800);
+                    //change_page('#loginpage', 'slide');
+                }
             },
 
             error: function (data) {
+
                 if (data.code == 9) {
                     popout('failpopup', 'slide');
                     change_page('#loginpage', 'slide');
                 }
+                alert("fail");
             }
         });
     }
