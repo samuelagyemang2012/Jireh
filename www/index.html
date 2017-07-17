@@ -104,7 +104,7 @@
         <h1 style="color: #ffffff; opacity: 0" class="align-center"><b>Panels</b></h1>
 
         <a href="#loginpage" class="ui-btn ui-btn-icon-right" data-transition="slide" data-direction="reverse">
-            <i class="zmdi zmdi zmdi-home"></i>
+            <i class="zmdi zmdi zmdi-power-off"></i>
         </a>
 
         <ul data-role="tab" data-swipe="true" class="nd2Tabs">
@@ -119,6 +119,12 @@
             <!--</li>-->
         </ul>
     </div>
+
+    <div data-role="popup" id="loading2" class="ui-content" style="background-color: white; border: none">
+        <h4 style="color: crimson">Processing Request</h4>
+    </div>
+
+
 
     <div data-role="content" id="myloans">
         <!--<div class='nd2-card'>-->
@@ -746,7 +752,7 @@
             <div>
                 <input type="text" class="form-control" name="social_security" id="scnumber"
                        min="5" onkeyup="validate('scnumber','soc','5','addclient')"
-                       onblur="alidate('scnumber','soc','5','addclient')">
+                       onblur="validate('scnumber','soc','5','addclient')">
             </div>
             <span id="soc"></span>
             <br>

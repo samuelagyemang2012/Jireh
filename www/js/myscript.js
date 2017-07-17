@@ -31,7 +31,7 @@ function login() {
     password = $("#lpassword").val();
 
     if (username.length == 0 && password.length == 0) {
-        popout('loginfailpopup2', 'slide');
+        popout('loginfailpopup2', 'pop');
     }
 
     $.post("http://5.9.86.210:19111/api/login/" + username + "/" + password,
@@ -45,14 +45,14 @@ function login() {
                 get_loans(username);
 
             } else {
-                popout('loginfailpopup', 'slide');
+                popout('loginfailpopup', 'pop');
             }
         });
 }
 
 function add_client(e) {
 
-    popout('loading', 'slide');
+    popout('loading', 'pop');
 
     e.preventDefault();
 
@@ -67,16 +67,56 @@ function add_client(e) {
 
     if (is_empty == true) {
         //alert('null field');
-        popout('sfailpopup2', 'slide');
+        setTimeout(
+            function () {
+                document.getElementById('loading').innerHTML = "Please fill all required fields";
+                document.getElementById('loading').style.color = "crimson";
+            }, 200);
+
+        setTimeout(
+            function () {
+                popout_close('loading', 'pop');
+                document.getElementById('loading').innerHTML = "Processing Request";
+                document.getElementById('loading').style.color = "#4CAF50";
+                //popout_close('apploading', 'pop');
+            }, 1500);
         return;
     }
 
     if (password.localeCompare(cpassword) != 0) {
-        popout('sfailpopup', 'slide');
+        setTimeout(
+            function () {
+                document.getElementById('loading').innerHTML = "Both passwords must match";
+                document.getElementById('loading').style.color = "crimson";
+            }, 200);
+
+        setTimeout(
+            function () {
+                popout_close('loading', 'pop');
+                document.getElementById('loading').innerHTML = "Processing Request";
+                document.getElementById('loading').style.color = "#4CAF50";
+                //popout_close('apploading', 'pop');
+            }, 1500);
+        return;
     }
 
     if (agree == 2) {
-        popout('sfailpopup3', 'slide');
+
+        setTimeout(
+            function () {
+                document.getElementById('loading').innerHTML = "You must agree with the terms and conditions";
+                document.getElementById('loading').style.color = "crimson";
+            }, 200);
+
+        setTimeout(
+            function () {
+                popout_close('loading', 'pop');
+                document.getElementById('loading').innerHTML = "Processing Request";
+                document.getElementById('loading').style.color = "#4CAF50";
+                //popout_close('apploading', 'pop');
+            }, 1500);
+
+        //popout('sfailpopup3', 'pop');
     }
 
     if (is_empty == false && agree == 1) {
@@ -106,15 +146,15 @@ function add_client(e) {
 
                     setTimeout(
                         function () {
-                            popout_close('loading', 'slide');
+                            popout_close('loading', 'pop');
                             document.getElementById('loading').innerHTML = "Processing Request";
                             document.getElementById('loading').style.color = "#4CAF50";
-                            //popout_close('apploading', 'slide');
-                        }, 800);
+                            //popout_close('apploading', 'pop');
+                        }, 1500);
                 }
 
                 if (data.code == '11') {
-
+//alert("empsty");
                     setTimeout(
                         function () {
                             document.getElementById('loading').innerHTML = "Invalid Data Provided";
@@ -123,10 +163,10 @@ function add_client(e) {
 
                     setTimeout(
                         function () {
-                            popout_close('loading', 'slide');
+                            popout_close('loading', 'pop');
                             document.getElementById('loading').innerHTML = "Processing Request";
                             document.getElementById('loading').style.color = "saddlebrown";
-                        }, 800);
+                        }, 1500);
                 }
 
                 if (data.code == '14') {
@@ -139,38 +179,28 @@ function add_client(e) {
 
                     setTimeout(
                         function () {
-                            popout_close('loading', 'slide');
+                            popout_close('loading', 'pop');
                             document.getElementById('loading').innerHTML = "Processing Request";
                             document.getElementById('loading').style.color = "saddlebrown";
-                        }, 800);
+                        }, 1500);
                 }
 
                 if (data.code == 0) {
 
-                    popout('successpopup', 'slide');
+                    popout('successpopup', 'pop');
 
                     setTimeout(
                         function () {
-                            change_page("#loginpage", "slide");
-                        }, 800);
-                }
-
-                if (data.code == 9) {
-                    popout('failpopup', 'slide');
-
-                    setTimeout(
-                        function () {
-                            change_page("#loginpage", "slide");
-                        }, 800);
-                    //change_page('#loginpage', 'slide');
+                            change_page("#loginpage", "pop");
+                        }, 1500);
                 }
             },
 
             error: function (data) {
 
                 if (data.code == 9) {
-                    popout('failpopup', 'slide');
-                    change_page('#loginpage', 'slide');
+                    popout('failpopup', 'pop');
+                    change_page('#loginpage', 'pop');
                 }
                 alert("fail");
             }
@@ -189,11 +219,40 @@ function create_loan(e) {
     var agree = $("#ag").val();
 
     if (is_empty == true) {
-        popout('loanpopup2', 'slide');
+
+        setTimeout(
+            function () {
+                document.getElementById('loading2').innerHTML = "Please fill all required fields";
+                document.getElementById('loading').style.color = "crimson";
+            }, 200);
+
+        setTimeout(
+            function () {
+                popout_close('loading', 'pop');
+                document.getElementById('loading').innerHTML = "Processing Request";
+                document.getElementById('loading').style.color = "saddlebrown";
+                //popout_close('apploading', 'pop');
+            }, 1500);
+        return;
+        //popout('loanpopup2', 'pop');
     }
 
     if (agree == 2) {
-        popout('loanpopup1', 'slide');
+        setTimeout(
+            function () {
+                document.getElementById('loading').innerHTML = "You must agree with the terms and conditions";
+                document.getElementById('loading').style.color = "crimson";
+            }, 200);
+
+        setTimeout(
+            function () {
+                popout_close('loading', 'pop');
+                document.getElementById('loading').innerHTML = "Processing Request";
+                document.getElementById('loading').style.color = "#4CAF50";
+                //popout_close('apploading', 'pop');
+            }, 1500);
+        return;
+        //popout('loanpopup1', 'pop');
     }
 
 
@@ -212,14 +271,49 @@ function create_loan(e) {
 
             success: function (results) {
 
-                get_loans($.cookie('email'));
+                if (results.code == '11') {
 
-                popout('loanpopup', 'slide');
+                    setTimeout(
+                        function () {
+                            document.getElementById('loading').innerHTML = "Invalid Data Provided";
+                            document.getElementById('loading').style.color = "crimson";
+                        }, 200);
 
-                setTimeout(
-                    function () {
-                        change_page("#myloanpage", "slide");
-                    }, 1000);
+                    setTimeout(
+                        function () {
+                            popout_close('loading', 'pop');
+                            document.getElementById('loading').innerHTML = "Processing Request";
+                            document.getElementById('loading').style.color = "saddlebrown";
+                        }, 1500);
+                }
+
+                if (results.code == '1') {
+
+                    get_loans($.cookie('email'));
+
+                    popout('loanpopup', 'pop');
+
+                    setTimeout(
+                        function () {
+                            change_page("#myloanpage", "pop");
+                        }, 1500);
+                }
+
+                if (results.code == '0') {
+
+                    setTimeout(
+                        function () {
+                            document.getElementById('loading').innerHTML = "Loan request failed";
+                            document.getElementById('loading').style.color = "crimson";
+                        }, 200);
+
+                    setTimeout(
+                        function () {
+                            popout_close('loading', 'pop');
+                            document.getElementById('loading').innerHTML = "Processing Request";
+                            document.getElementById('loading').style.color = "saddlebrown";
+                        }, 1500);
+                }
             },
 
             error: function (results) {
@@ -229,7 +323,7 @@ function create_loan(e) {
                 //            //}
                 //            //alert('error');
                 //            //popout_message('loanpopupmsg', "Your loan application was successful.");
-                //            //popout('loanpopup', 'slide');
+                //            //popout('loanpopup', 'pop');
             }
         });
     }
