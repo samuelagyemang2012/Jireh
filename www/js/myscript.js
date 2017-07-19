@@ -52,6 +52,8 @@ function login() {
 
 function add_client(e) {
 
+    var built = '';
+
     popout('loading', 'pop');
 
     e.preventDefault();
@@ -140,21 +142,28 @@ function add_client(e) {
 
                     setTimeout(
                         function () {
-                            document.getElementById('loading').innerHTML = "Your email or social security number is already taken";
-                            document.getElementById('loading').style.color = "crimson";
+
+                            for (var i in data.msg) {
+                                //built += "<br>";
+                                built += "<p style='color: crimson;'>" + data.msg[i] + "</p>";
+                            }
+                            built += "<a href='#' class='ui-btn ui-btn-inline waves-button' onclick='sethidden()'>Close</a>";
+                            built += "<br>";
+                            $("#errors").html(built);
+                            $("#errors").show();
                         }, 200);
 
                     setTimeout(
                         function () {
                             popout_close('loading', 'pop');
                             document.getElementById('loading').innerHTML = "Processing Request";
-                            document.getElementById('loading').style.color = "#4CAF50";
+                            document.getElementById('loading').style.color = "saddlebrown";
                             //popout_close('apploading', 'pop');
-                        }, 1500);
+                        }, 1200);
                 }
 
                 if (data.code == '11') {
-//alert("empsty");
+
                     setTimeout(
                         function () {
                             document.getElementById('loading').innerHTML = "Invalid Data Provided";
@@ -173,7 +182,7 @@ function add_client(e) {
 
                     setTimeout(
                         function () {
-                            document.getElementById('loading').innerHTML = "Picure failed to upload";
+                            document.getElementById('loading').innerHTML = "Picture failed to upload";
                             document.getElementById('loading').style.color = "crimson";
                         }, 200);
 
@@ -187,12 +196,14 @@ function add_client(e) {
 
                 if (data.code == 0) {
 
-                    popout('successpopup', 'pop');
+                    //popout('successpopup', '');
+                    alert("Sign Up Sucessful");
 
                     setTimeout(
                         function () {
+                            //popout('successpopup', 'slide')
                             change_page("#loginpage", "pop");
-                        }, 1500);
+                        }, 1000);
                 }
             },
 
@@ -202,7 +213,7 @@ function add_client(e) {
                     popout('failpopup', 'pop');
                     change_page('#loginpage', 'pop');
                 }
-                alert("fail");
+                //alert("fail");
             }
         });
     }
@@ -394,27 +405,28 @@ function sendImage(e) {
 
     e.preventDefault();
 
-    var form = $('#testform')[0];
+    //var form = $('#testform')[0];
 
-    var formData = new FormData(form);
+    var formData = $("#testform").serialize();
 
-    $.ajax({
-        url: 'http://5.9.86.210:19111/api/test',
-        data: formData,
-        type: 'POST',
-        contentType: false,
-        processData: false,
+    $.post("http://5.9.86.210:19111/api/test?" + formData,
 
-        success: function (data) {
-            alert('yes');
-        },
+        function (response) {
 
-        error: function (data) {
-            alert('no');
-        }
+            //alert("sasada");
 
-    });
+            if (response.code == 9) {
+
+                alert(response.msg);
+
+            }
+        });
 }
+
+function sethidden() {
+    $("#errors").hide();
+}
+
 
 
 

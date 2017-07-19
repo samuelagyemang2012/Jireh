@@ -125,7 +125,6 @@
     </div>
 
 
-
     <div data-role="content" id="myloans">
         <!--<div class='nd2-card'>-->
         <!--<div class='card-title'>-->
@@ -472,6 +471,7 @@
         <h4 style="color: saddlebrown">Processing Request</h4>
     </div>
 
+
     <!--<div data-role="popup" id="sfailpopup3" class="ui-content" style="background-color: white; border: none">-->
     <!--<h4 style="color: crimson">Invalid telephone number !</h4>-->
     <!--</div>-->
@@ -481,6 +481,11 @@
     <!--</div>-->
 
     <div data-role="content">
+        <div hidden id="errors" style="position: fixed; background-color: #fff; z-index: 12; top:0; bottom:0; overflow-x: hidden; overflow-y:scroll">
+            <!--<li>sdbsajdkbas</li>-->
+            <!--<li>jkadasjbdasjbk</li>-->
+        </div>
+
         <form enctype="multipart/form-data" id="signupform">
             <div>
 
@@ -1156,9 +1161,9 @@
         <!--<textarea id="textAreaFileContents"></textarea>-->
         <form enctype="multipart/form-data" method="POST" id="testform">
 
-            <input type="text" id="mytext" name="mytext" value="sam">
+            <input type="text" id="usernamet" name="usernamet" required>
 
-            <input type="file" id="inp" name="image">
+            <input type="password" id="pasword" name="password" required>
 
             <button onclick="sendImage(event)">TEST</button>
 
