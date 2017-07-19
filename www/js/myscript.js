@@ -198,6 +198,7 @@ function add_client(e) {
 
                     //popout('successpopup', '');
                     alert("Sign Up Sucessful");
+                    document.getElementById('signupform').reset();
 
                     setTimeout(
                         function () {
@@ -315,11 +316,12 @@ function create_loan(e) {
 
                     //popout('loanpopup', 'pop');
                     alert("Loan Request Successful");
+                    document.getElementById('loanform').reset();
 
                     setTimeout(
                         function () {
                             change_page("#myloanpage", "pop");
-                        }, 4000);
+                        }, 3000);
                 }
 
                 if (results.code == '0') {
