@@ -30,7 +30,7 @@ function login() {
     username = $("#username").val();
     password = $("#lpassword").val();
 
-    if (username.length == 0 && password.length == 0) {
+    if (username.length == 0 || password.length == 0) {
         popout('loginfailpopup2', 'pop');
     }
 
@@ -221,10 +221,14 @@ function add_client(e) {
 
 function create_loan(e) {
 
+    var built = '';
+
+    popout('loading2', 'pop');
+
     e.preventDefault();
-
+    //
     $("#client_email").val($.cookie('email'));
-
+    //
     var is_empty = is_form_empty('loanform');
 
     var agree = $("#ag").val();
@@ -286,28 +290,36 @@ function create_loan(e) {
 
                     setTimeout(
                         function () {
-                            document.getElementById('loading').innerHTML = "Invalid Data Provided";
-                            document.getElementById('loading').style.color = "crimson";
+
+                            for (var i in results.msg) {
+                                built += "<p style='color: crimson;'>" + results.msg[i] + "</p>";
+                            }
+                            built += "<a href='#' class='ui-btn ui-btn-inline waves-button' onclick='sethidden2()'>Close</a>";
+                            built += "<br>";
+                            $("#errors2").html(built);
+                            $("#errors2").show();
                         }, 200);
 
                     setTimeout(
                         function () {
-                            popout_close('loading', 'pop');
-                            document.getElementById('loading').innerHTML = "Processing Request";
-                            document.getElementById('loading').style.color = "saddlebrown";
-                        }, 1500);
+                            popout_close('loading2', 'pop');
+                            document.getElementById('loading2').innerHTML = "Processing Request";
+                            document.getElementById('loading2').style.color = "saddlebrown";
+                            //popout_close('apploading', 'pop');
+                        }, 1200);
                 }
 
                 if (results.code == '1') {
 
                     get_loans($.cookie('email'));
 
-                    popout('loanpopup', 'pop');
+                    //popout('loanpopup', 'pop');
+                    alert("Loan Request Successful");
 
                     setTimeout(
                         function () {
                             change_page("#myloanpage", "pop");
-                        }, 1500);
+                        }, 4000);
                 }
 
                 if (results.code == '0') {
@@ -425,6 +437,10 @@ function sendImage(e) {
 
 function sethidden() {
     $("#errors").hide();
+}
+
+function sethidden2() {
+    $("#errors2").hide();
 }
 
 
