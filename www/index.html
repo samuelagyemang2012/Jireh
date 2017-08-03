@@ -450,17 +450,9 @@
         <h4 style="color: saddlebrown">Processing Request</h4>
     </div>
 
-
-    <!--<div data-role="popup" id="sfailpopup3" class="ui-content" style="background-color: white; border: none">-->
-    <!--<h4 style="color: crimson">Invalid telephone number !</h4>-->
-    <!--</div>-->
-
-    <!--<div data-role="popup" id="sfailpopup4" class="ui-content" style="background-color: white; border: none">-->
-    <!--<h4 style="color: crimson">Your password should be at least 8 characters long !</h4>-->
-    <!--</div>-->
-
     <div data-role="content">
-        <div hidden id="errors" style="position: fixed; background-color: #fff; z-index: 12; top:0; bottom:0; overflow-x: hidden; overflow-y:scroll">
+        <div hidden id="errors"
+             style="position: fixed; background-color: #fff; z-index: 12; top:0; bottom:0; overflow-x: hidden; overflow-y:scroll">
             <!--<li>sdbsajdkbas</li>-->
             <!--<li>jkadasjbdasjbk</li>-->
         </div>
@@ -570,11 +562,11 @@
             <span id="tmob"></span>
             <br>
 
-            <label>Telephone(Official)&nbsp;<b style="color: crimson">*</b></label>
+            <label>Telephone(Official)</label>
             <div>
-                <input type="tel" name="telephone_official" class="form-control" id="teloff" min="10"
-                       onkeyup="validate('teloff','toff','10','addclient')"
-                       onblur="validate('teloff','toff','10','addclient')">
+                <input type="tel" name="telephone_official" class="form-control" id="teloff"
+                       onkeyup=""
+                       onblur="">
             </div>
             <span id="toff"></span>
             <br>
@@ -622,11 +614,11 @@
             <span id="nation"></span>
             <br>
 
-            <label>Number of Years in Current Employment&nbsp;<b style="color: crimson">*</b></label>
+            <label>Number of Years in Current Employment</label>
             <div>
                 <input type="number" class="form-control" name="numyears" id="numyears"
-                       min="1" onkeyup="validate('numyears','nyears','1','addclient')"
-                       onblur="validate('numyears','nyears','1','addclient')">
+                       min="1" onkeyup=""
+                       onblur="">
             </div>
             <span id="nyears"></span>
             <br>
@@ -732,20 +724,20 @@
             <span id="h"></span>
             <br>
 
-            <label>Social Security Number&nbsp;<b style="color: crimson">*</b></label>
+            <label>Social Security Number</label>
             <div>
                 <input type="text" class="form-control" name="social_security" id="scnumber"
-                       min="5" onkeyup="validate('scnumber','soc','5','addclient')"
-                       onblur="validate('scnumber','soc','5','addclient')">
+                       min="5" onkeyup=""
+                       onblur="">
             </div>
             <span id="soc"></span>
             <br>
 
-            <label>Number of Member in Household&nbsp;<b style="color: crimson">*</b></label>
+            <label>Number of Member in Household</label>
             <div>
                 <input type="number" class="form-control" name="numhousehold" id="numhousehold"
-                       min="1" onkeyup="validate('numhousehold','nh','1','addclient')"
-                       onblur="validate('numhousehold','nh','1','addclient')">
+                       min="1" onkeyup=""
+                       onblur="">
             </div>
             <span id="nh"></span>
             <br>
@@ -759,20 +751,20 @@
             <span id="nd"></span>
             <br>
 
-            <label>Father's Name&nbsp;<b style="color: crimson">*</b></label>
+            <label>Father's Name</label>
             <div>
                 <input type="text" class="form-control" name="father" id="father" min="2"
-                       onkeyup="validate('father','fa','2','addclient')"
-                       onblur="validate('father','fa','2','addclient')">
+                       onkeyup=""
+                       onblur="">
             </div>
             <span id="fa"></span>
             <br>
 
-            <label>Mother's Name&nbsp;<b style="color: crimson">*</b></label>
+            <label>Mother's Name</label>
             <div>
                 <input type="text" class="form-control" name="mother" id="mother"
-                       min="2" onkeyup="validate('mother','mo','2','addclient')"
-                       onblur="validate('mother','mo','2','addclient')">
+                       min="2" onkeyup=""
+                       onblur="">
             </div>
             <span id="mo"></span>
             <br>
@@ -902,7 +894,8 @@
 
     <div data-role="content">
 
-        <div hidden id="errors2" style="position: fixed; background-color: #fff; z-index: 12; top:0; bottom:0; overflow-x: hidden; overflow-y:scroll">
+        <div hidden id="errors2"
+             style="position: fixed; background-color: #fff; z-index: 12; top:0; bottom:0; overflow-x: hidden; overflow-y:scroll">
 
         </div>
 
