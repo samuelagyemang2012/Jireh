@@ -385,32 +385,40 @@ function get_loans(email) {
 
             if (response.code == 1) {
 
-                //console.log(response);
+                if (response.data == null) {
 
-                for (var i in response.data) {
+                    build += "<p style='color: saddlebrown'>You have not applied for any loans</p>";
 
-                    build += "<div class='nd2-card'>";
-                    build += "<div class='card-title'>";
-                    build += "<h4 class='card-primary-title' style='color: #8A5241;'> Amount Requested </h4>";
-                    build += "<h5>" + response.data[i].amount_requested + "</h5>";
-                    build += "<h4 class='card-primary-title' style='color: #8A5241;'> Status </h4>";
-                    build += "<h5>" + response.data[i].name + "</h5>";
-                    build += "<div class='card-action'>";
-                    build += "<div class='row between-xs'>";
-                    build += "<div class='col-xs-12 align-right'>";
-                    build += "<div class='box'>";
-                    build += "<a href='#'class='ui-btn ui-btn-inline ui-btn-fab waves-effect waves-button waves-effect waves-button'></a>";
-                    build += "</div>";
-                    build += "</div>";
-                    build += "</div>";
-                    build += "</div>";
-                    build += "</div>";
-                    build += "</div>";
+                    $("#myloans").html(build);
+
+                    change_page('#myloanpage', '');
+                } else {
+
+                    for (var i in response.data) {
+
+                        build += "<div class='nd2-card'>";
+                        build += "<div class='card-title'>";
+                        build += "<h4 class='card-primary-title' style='color: #8A5241;'> Amount Requested </h4>";
+                        build += "<h5>" + response.data[i].amount_requested + "</h5>";
+                        build += "<h4 class='card-primary-title' style='color: #8A5241;'> Status </h4>";
+                        build += "<h5>" + response.data[i].name + "</h5>";
+                        build += "<div class='card-action'>";
+                        build += "<div class='row between-xs'>";
+                        build += "<div class='col-xs-12 align-right'>";
+                        build += "<div class='box'>";
+                        build += "<a href='#'class='ui-btn ui-btn-inline ui-btn-fab waves-effect waves-button waves-effect waves-button'></a>";
+                        build += "</div>";
+                        build += "</div>";
+                        build += "</div>";
+                        build += "</div>";
+                        build += "</div>";
+                        build += "</div>";
+                    }
+
+                    $("#myloans").html(build);
+
+                    change_page('#myloanpage', '');
                 }
-
-                $("#myloans").html(build);
-
-                change_page('#myloanpage', '');
             }
         });
 }
