@@ -23,7 +23,7 @@ function change_page(page, transition) {
 }
 
 function login() {
-
+    //alert("dasds");
     var url, username, password;
 
 
@@ -34,7 +34,7 @@ function login() {
         popout('loginfailpopup2', 'pop');
     }
 
-    $.post("http://5.9.86.210:19111/api/login/" + username + "/" + password,
+    $.post("http://jireh.npontu.com/api/login/" + username + "/" + password,
 
         function (response) {
 
@@ -130,7 +130,7 @@ function add_client(e) {
         var formData = new FormData(form);
 
         $.ajax({
-            url: 'http://5.9.86.210:19111/api/add-client',
+            url: 'http://jireh.npontu.com/api/add-client',
             data: formData,
             type: 'POST',
             contentType: false,
@@ -282,7 +282,7 @@ function create_loan(e) {
 
         $.ajax({
             type: 'post',
-            url: 'http://5.9.86.210:19111/api/add-loan?',
+            url: 'http://jireh.npontu.com/api/add-loan?',
             data: datastring,
 
             success: function (results) {
@@ -379,7 +379,7 @@ function get_loans(email) {
 
     build = "";
 
-    $.post("http://5.9.86.210:19111/api/getloans/" + email,
+    $.post("http://jireh.npontu.com/api/getloans/" + email,
 
         function (response) {
 
@@ -431,7 +431,7 @@ function sendImage(e) {
 
     var formData = $("#testform").serialize();
 
-    $.post("http://5.9.86.210:19111/api/test?" + formData,
+    $.post("http://jireh.npontu.com/api/test?" + formData,
 
         function (response) {
 
